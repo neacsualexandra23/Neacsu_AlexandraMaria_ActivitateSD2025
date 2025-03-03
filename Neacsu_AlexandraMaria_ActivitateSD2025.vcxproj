@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Seminar02.c" />
     <ClCompile Include="Neacsu_AlexandraMaria_ActivitateSD2025.c" />
     <ClCompile Include="Seminar01.c" />
   </ItemGroup>
