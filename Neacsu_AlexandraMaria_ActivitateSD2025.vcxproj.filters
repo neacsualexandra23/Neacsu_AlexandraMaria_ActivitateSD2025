@@ -18,5 +18,15 @@
     <ClCompile Include="Neacsu_AlexandraMaria_ActivitateSD2025.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Seminar04.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Laborator01.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="masini.txt" />
+    <Text Include="data.txt" />
   </ItemGroup>
 </Project>
