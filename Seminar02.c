@@ -3,6 +3,13 @@
 #include<string.h>
 #include<stdlib.h>
 
+#define _CRT_SECURE_NO_WARNINGS
+#include<iostream>;
+
+#include<fstream>;
+
+//using namespace std;
+
 //adaugare vector
 //citire din fisier
 //??lista simplu inlnatuita
