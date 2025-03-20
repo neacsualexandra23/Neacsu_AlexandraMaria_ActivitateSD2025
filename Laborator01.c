@@ -10,7 +10,7 @@ struct Masina {
 	float capacitateC;
    char normaPoluare;
 };
-
+/*
 struct Masina initializare(int id, int nrLocuri, const char* marca, float capacitateC, char normaPoluare) {
 	struct Masina m;
 	m.id = id;
@@ -52,3 +52,4 @@ int main() {
 
 	return 0;
 }
+*/
