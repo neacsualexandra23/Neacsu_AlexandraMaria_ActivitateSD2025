@@ -53,6 +53,7 @@ struct Cinema citireCinema() {
 	return c;
 }
 //3.  o functie care calculeaza media incasarilor pe cinematograf
+//float calculareMedieIncasari(struct Cinema c);
 float calculareMedieIncasari(struct Cinema c) {
 	if (c.NrIncasari == 0) {
 		printf("Cinematograful nu are incasari.\n");
