@@ -74,6 +74,8 @@ void modificareNrSali(struct Cinema* c, int nrSaliNou) {
 	c->nrSali = nrSaliNou;
 }
 
+// 5.Realizați o funcție care afișează un obiect de tipul creat.
+// Afișarea se face la console, și sunt afișate toate informațiile.
 void afisare(struct Cinema c) {
 	int i;
 	printf("\nDenumire: %s\nNr sali: %d\nNr incasari: %d\nIncasari: ", c.denumire, c.nrSali, c.NrIncasari);
