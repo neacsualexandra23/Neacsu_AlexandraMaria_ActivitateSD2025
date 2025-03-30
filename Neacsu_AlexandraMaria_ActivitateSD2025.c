@@ -67,6 +67,12 @@ float calculareMedieIncasari(struct Cinema c) {
 
 	return suma / c.NrIncasari;
 };
+//4. Realizati o functie care modifica pentru un obiect primit ca parametru, 
+// un anumit camp. noua valoare este primita ca parametru. 
+//void modificareNrSali(struct Cinema* c, int nrSaliNou)
+void modificareNrSali(struct Cinema* c, int nrSaliNou) {
+	c->nrSali = nrSaliNou;
+}
 
 void afisare(struct Cinema c) {
 	int i;
@@ -87,6 +93,10 @@ int main()
 	float m;
 	m = calculareMedieIncasari(c2);
 	printf("Media incasarilor pe cinematograf este: %.2f\n", m);
+
+
+	modificareNrSali(&c2, 10);
+	afisare(c2);
 	printf("Hello World!");
 
 	
