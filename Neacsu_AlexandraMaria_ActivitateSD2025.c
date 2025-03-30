@@ -29,8 +29,9 @@ struct Cinema initCinema(const char* denumire, int nrSali, int NrIncasari, const
     return c;
 }
 
-//Realizati o functie cu ajutorul careia sa cititi de la tastatura un articol de tipul 
-// construit de voi.Funcția returnează obiectul citit.
+//2. Realizati o functie cu ajutorul careia sa cititi de la tastatura un articol de tipul 
+// construit de voi.Funcția returnează obiectul citit. 
+//
 
 struct Cinema citireCinema() {
 	struct Cinema c;
