@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-
+//1.1 Definiti o structura de date care sa contina informatii despre un cinematograf.
 struct Cinema {
 	char* denumire;
 	int nrSali;
@@ -29,7 +29,7 @@ struct Cinema initCinema(const char* denumire, int nrSali, int NrIncasari, const
     return c;
 }
 
-//2. Realizati o functie cu ajutorul careia sa cititi de la tastatura un articol de tipul 
+//1.2. Realizati o functie cu ajutorul careia sa cititi de la tastatura un articol de tipul 
 // construit de voi.Funcția returnează obiectul citit. 
 //
 
@@ -52,7 +52,7 @@ struct Cinema citireCinema() {
 	}
 	return c;
 }
-//3.  o functie care calculeaza media incasarilor pe cinematograf
+//1.3.  o functie care calculeaza media incasarilor pe cinematograf
 //float calculareMedieIncasari(struct Cinema c);
 float calculareMedieIncasari(struct Cinema c) {
 	if (c.NrIncasari == 0) {
@@ -67,14 +67,14 @@ float calculareMedieIncasari(struct Cinema c) {
 
 	return suma / c.NrIncasari;
 };
-//4. Realizati o functie care modifica pentru un obiect primit ca parametru, 
+//1.4. Realizati o functie care modifica pentru un obiect primit ca parametru, 
 // un anumit camp. noua valoare este primita ca parametru. 
 //void modificareNrSali(struct Cinema* c, int nrSaliNou)
 void modificareNrSali(struct Cinema* c, int nrSaliNou) {
 	c->nrSali = nrSaliNou;
 }
 
-// 5.Realizați o funcție care afișează un obiect de tipul creat.
+// 1.5.Realizați o funcție care afișează un obiect de tipul creat.
 // Afișarea se face la console, și sunt afișate toate informațiile.
 void afisare(struct Cinema c) {
 	int i;
