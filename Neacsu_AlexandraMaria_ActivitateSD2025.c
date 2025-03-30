@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS
+﻿#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -16,7 +16,7 @@ struct Cinema initCinema(const char* denumire, int nrSali, int NrIncasari, const
     int i;
 	
 	c.denumire = (char*)malloc(sizeof(char) * (strlen(denumire) + 1));
-	strcpy(c.denumire, denumire);
+	strcpy_s(c.denumire, strlen(denumire) + 1, denumire);
 	
 	    
     c.nrSali = nrSali;
@@ -29,7 +29,28 @@ struct Cinema initCinema(const char* denumire, int nrSali, int NrIncasari, const
     return c;
 }
 
+//Realizati o functie cu ajutorul careia sa cititi de la tastatura un articol de tipul 
+// construit de voi.Funcția returnează obiectul citit.
 
+struct Cinema citireCinema() {
+	struct Cinema c;
+	int i;
+	char buffer[20];
+	printf("Denumire: ");
+	scanf("%s", buffer);
+	c.denumire = (char*)malloc(sizeof(char) * (strlen(buffer) + 1));
+	strcpy(c.denumire, buffer);
+	printf("Nr sali: ");
+	scanf("%d", &c.nrSali);
+	printf("Nr incasari: ");
+	scanf("%d", &c.NrIncasari);
+	c.Incasari = (float*)malloc(sizeof(float) * c.NrIncasari);
+	for (i = 0; i < c.NrIncasari; i++) {
+		printf("Incasare[%d]: ", i);
+		scanf("%f", &c.Incasari[i]);
+	}
+	return c;
+}
 
 void afisare(struct Cinema c) {
 	int i;
@@ -41,8 +62,11 @@ void afisare(struct Cinema c) {
 int main()
 { 
 	float incasariExemplu[] = { 1000.5f, 2000.0f, 1500.25f };
-	struct Cinema c1 = initCinema("Cinema City", 5, 3, incasariExemplu);
+	struct Cinema c1 = initCinema("CinemaCity", 5, 3, incasariExemplu);
 	afisare(c1);
+
+	struct Cinema c2 = citireCinema();
+	afisare(c2);
 	printf("Hello World!");
 	
 	return 0;
