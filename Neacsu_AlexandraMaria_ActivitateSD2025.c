@@ -4,6 +4,7 @@
 #include <string.h>
 
 //1.1 Definiti o structura de date care sa contina informatii despre un cinematograf.
+// Alexandra Maria Neacsu
 struct Cinema {
 	char* denumire;
 	int nrSali;
