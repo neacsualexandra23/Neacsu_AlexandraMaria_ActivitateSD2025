@@ -116,6 +116,19 @@ int main()
 	dezalocare(&c1);
 	dezalocare(&c2);
 
+	//2.1 Vectori de structuri
+	//Creati in functia main un vector alocat dinamic cu cel putin 5 obiecte de tipul structurii voastre.
+
+	struct Cinema* vectorCinematografe;
+	vectorCinematografe = (struct Cinema*)malloc(sizeof(struct Cinema) * 5);
+
+	float incasariExemplu2[] = { 1700.5f, 20870.0f, 1500.25f };
+	vectorCinematografe[0] = initCinema("CinemaCity", 5, 3, incasariExemplu2);
+	vectorCinematografe[1] = initCinema("CinemaCity2", 5, 3, incasariExemplu2);
+	vectorCinematografe[2] = initCinema("CinemaCity3", 5, 3, incasariExemplu2);
+	vectorCinematografe[3] = initCinema("CinemaCity4", 5, 3, incasariExemplu2);
+	vectorCinematografe[4] = initCinema("CinemaCity5", 5, 3, incasariExemplu2);
+
 
 	
 	return 0;
