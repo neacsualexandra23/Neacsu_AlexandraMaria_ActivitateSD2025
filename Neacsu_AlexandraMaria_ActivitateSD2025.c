@@ -47,7 +47,7 @@ struct Cinema citireCinema() {
 	printf("Nr incasari: ");
 	scanf("%d", &c.NrIncasari);
 	c.Incasari = (float*)malloc(sizeof(float) * c.NrIncasari);
-	for (i = 0; i < c.NrIncasari; i++) {
+	for (i = 0; i < c.NrIncasari-1; i++) {
 		printf("Incasare[%d]: ", i);
 		scanf("%f", &c.Incasari[i]);
 	}
@@ -62,7 +62,7 @@ float calculareMedieIncasari(struct Cinema c) {
 	}
 
 	float suma = 0;
-	for (int i = 0; i < c.NrIncasari; i++) {
+	for (int i = 0; i < c.NrIncasari-1; i++) {
 		suma += c.Incasari[i];
 	}
 
@@ -80,16 +80,27 @@ void modificareNrSali(struct Cinema* c, int nrSaliNou) {
 void afisare(struct Cinema c) {
 	int i;
 	printf("\nDenumire: %s\nNr sali: %d\nNr incasari: %d\nIncasari: ", c.denumire, c.nrSali, c.NrIncasari);
-	for (i = 0; i < c.NrIncasari; i++) {
+	for (i = 0; i < c.NrIncasari-1; i++) {
 		printf("%.2f ", c.Incasari[i]);
 	}
 }
+
+//1.6. Realizati un program care dezaloca memoria alocata pentru un obiect de tipul creat.
+//void dezalocare(struct Cinema* c);
+void dezalocare(struct Cinema* c) {
+	free(c->denumire);
+	(*c).denumire = NULL;
+	free(c->Incasari);
+	(*c).Incasari = NULL;
+}
+
 int main()
 { 
 	float incasariExemplu[] = { 1000.5f, 2000.0f, 1500.25f };
 	struct Cinema c1 = initCinema("CinemaCity", 5, 3, incasariExemplu);
 	afisare(c1);
 
+	//citire cinema de la tastatura
 	struct Cinema c2 = citireCinema();
 	afisare(c2);
 
@@ -101,6 +112,10 @@ int main()
 	modificareNrSali(&c2, 10);
 	afisare(c2);
 	printf("Hello World!");
+
+	dezalocare(&c1);
+	dezalocare(&c2);
+
 
 	
 	return 0;
