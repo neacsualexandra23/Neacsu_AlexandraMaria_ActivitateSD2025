@@ -47,7 +47,7 @@ struct Cinema citireCinema() {
 	printf("Nr incasari: ");
 	scanf("%d", &c.NrIncasari);
 	c.Incasari = (float*)malloc(sizeof(float) * c.NrIncasari);
-	for (i = 0; i < c.NrIncasari-1; i++) {
+	for (i = 0; i < c.NrIncasari; i++) {
 		printf("Incasare[%d]: ", i);
 		scanf("%f", &c.Incasari[i]);
 	}
@@ -62,7 +62,7 @@ float calculareMedieIncasari(struct Cinema c) {
 	}
 
 	float suma = 0;
-	for (int i = 0; i < c.NrIncasari-1; i++) {
+	for (int i = 0; i < c.NrIncasari; i++) {
 		suma += c.Incasari[i];
 	}
 
@@ -80,7 +80,7 @@ void modificareNrSali(struct Cinema* c, int nrSaliNou) {
 void afisare(struct Cinema c) {
 	int i;
 	printf("\nDenumire: %s\nNr sali: %d\nNr incasari: %d\nIncasari: ", c.denumire, c.nrSali, c.NrIncasari);
-	for (i = 0; i < c.NrIncasari-1; i++) {
+	for (i = 0; i < c.NrIncasari; i++) {
 		printf("%.2f ", c.Incasari[i]);
 	}
 }
@@ -130,6 +130,46 @@ void copiereCinemaCunrElementeMaiMreDecat(struct Cinema* vector, int nrElemente,
 
 
 }
+//2.3. Funcție pentru mutarea obiectelor care îndeplinesc o altă condiție într-un nou vector
+//NrIncasari sa fie mai mare decat 10
+void mutaCinemaCuNrIncasariMare(struct Cinema** vector, int* nrElemente, int NrIncasariPrag,
+	struct Cinema** vectorIncasariMari, int* dimensiune) {
+
+	*dimensiune = 0;
+	for (int i = 0; i < *nrElemente; i++) {
+		if ((*vector)[i].NrIncasari > NrIncasariPrag) {
+			(*dimensiune)++;
+		}
+	}
+	*vectorIncasariMari = (struct Cinema*)malloc(sizeof(struct Cinema) * (*dimensiune));
+	int k = 0;
+	for (int i = 0; i < *nrElemente;) {
+		if ((*vector)[i].NrIncasari > NrIncasariPrag) {
+			(*vectorIncasariMari)[k] = (*vector)[i];
+
+			(*vectorIncasariMari)[k].denumire = (char*)malloc(strlen((*vector)[i].denumire) + 1);
+			strcpy_s((*vectorIncasariMari)[k].denumire, strlen((*vector)[i].denumire) + 1, (*vector)[i].denumire);
+
+			(*vectorIncasariMari)[k].Incasari = (float*)malloc((*vector)[i].NrIncasari * sizeof(float));
+			for (int j = 0; j < (*vector)[i].NrIncasari; j++) {
+				(*vectorIncasariMari)[k].Incasari[j] = (*vector)[i].Incasari[j];
+			}
+			free((*vector)[i].denumire);
+			free((*vector)[i].Incasari);
+
+			for (int j = i; j < *nrElemente - 1; j++) {
+				(*vector)[j] = (*vector)[j + 1];
+			}
+
+			(*nrElemente)--;
+			k++;
+		}
+		else {
+			i++;
+		}
+	}
+
+}
 
 //2.5. Funcție pentru afișarea unui vector de obiecte.
 void afisareVector(struct Cinema* vector, int nrElemente) {
@@ -167,22 +207,36 @@ int main()
 	struct Cinema* vectorCinematografe;
 	vectorCinematografe = (struct Cinema*)malloc(sizeof(struct Cinema) * 5);
 
-	float incasariExemplu2[] = { 1700.5f, 20870.0f, 1500.25f };
+	float incasariExemplu2[] = { 129.5f, 20870.0f, 1500.25f };
+	float incasariExemplu3[] = { 129.5f, 20870.0f, 1500.25f, 345.7f, 45.5 };
 	vectorCinematografe[0] = initCinema("CinemaCity", 6, 3, incasariExemplu2);
 	vectorCinematografe[1] = initCinema("CinemaCity2", 8, 3, incasariExemplu2);
-	vectorCinematografe[2] = initCinema("CinemaCity3", 7, 3, incasariExemplu);
+	vectorCinematografe[2] = initCinema("CinemaCity3", 7, 5, incasariExemplu3);
 	vectorCinematografe[3] = initCinema("CinemaCity4", 5, 3, incasariExemplu);
-	vectorCinematografe[4] = initCinema("CinemaCity5", 5, 3, incasariExemplu2);
+	vectorCinematografe[4] = initCinema("CinemaCity5", 5, 5, incasariExemplu3);
 
 	//2.3. Realizati o functie care sa copieze in alt vector obiectele care indeplinesc o anumita conditie.
 	struct Cinema* vectorCinematografeCopiate = NULL;
 	int nrElemCop = 0;
 	copiereCinemaCunrElementeMaiMreDecat(vectorCinematografe, 5, 5, &vectorCinematografeCopiate, &nrElemCop);
 
-
+	printf("\nCinematgrafele cu numar de sali mai mare decat 5 :\n");
 	afisareVector(vectorCinematografeCopiate, nrElemCop);
 
+	//2.4. Realizati o functie care sa mute in alt vector obiectele care indeplinesc o anumita conditie.
+
+	struct Cinema* vectorCinematografeIncasariMari = NULL;
+	int nrElemIncasariMari = 0;
+	int nrElemente = 5;
+	int prag = 4;
+	mutaCinemaCuNrIncasariMare(&vectorCinematografe, &nrElemente, prag, &vectorCinematografeIncasariMari, &nrElemIncasariMari);
+
 	
+	printf("\nCinematografele cu NrIncasari mai mari decat 4:\n");
+	afisareVector(vectorCinematografeIncasariMari, nrElemIncasariMari);
+
+	printf("\n=========   Partea 3. Fișiere  =======\n");
 	return 0;
+
 
 }
