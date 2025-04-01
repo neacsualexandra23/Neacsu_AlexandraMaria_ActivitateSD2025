@@ -128,6 +128,8 @@ int main() {
 	dezalocare(&vectorMasiniCopiate, &nrElemCop);
 
 	printf("afisare masini cu capacitate mai mare");
+	void copiazaMasiniCuCCMare(struct Masina* vector, char nrElemente, float prag, struct Masina** vectorNou, int* dimensiune) {
+
 	copiazaMasiniCuCCMare(vector, nrElem, 10, &vectorMasiniCopiate, &nrElemCop);
 
 	afisareVector(vectorMasiniCopiate, nrElemCop);

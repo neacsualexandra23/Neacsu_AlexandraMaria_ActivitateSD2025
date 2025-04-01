@@ -93,6 +93,51 @@ void dezalocare(struct Cinema* c) {
 	free(c->Incasari);
 	(*c).Incasari = NULL;
 }
+//2.2.Funcție pentru copierea obiectelor care îndeplinesc o condiție într - un nou vector.
+//struct Cinema* copiereCinematografe(struct Cinema* vectorCinematografe, int nrSali);
+void copiereCinemaCunrElementeMaiMreDecat(struct Cinema* vector, int nrElemente, float prag, struct Cinema** vectorNou, int* dimensiune) {
+
+	*dimensiune = 0;
+	for (int i = 0; i < nrElemente; i++)
+	{
+		if (prag < vector[i].nrSali)
+		{
+			(*dimensiune)++;
+
+		}
+	}
+	if (*dimensiune > 0)
+	{
+		int j = 0;
+		*vectorNou = (struct Cinema*)malloc((*dimensiune) * sizeof(struct Cinema));
+		for (int i = 0; i < nrElemente; i++)
+		{
+			if (prag < vector[i].nrSali)
+			{
+				(*vectorNou)[j] = vector[i];
+				(*vectorNou)[j].denumire = malloc((strlen(vector[i].denumire) + 1) * sizeof(char));
+				strcpy_s((*vectorNou)[j].denumire, strlen(vector[i].denumire) + 1, vector[i].denumire);
+
+				(*vectorNou)[j].Incasari = (float*)malloc(sizeof(vector[i].Incasari) * sizeof(float));
+				for (int k = 0; k < vector[i].NrIncasari; k++) {
+					(*vectorNou)[j].Incasari[k] = vector[i].Incasari[k];
+
+				}
+				j++;
+			}
+		}
+	}
+
+
+}
+
+//2.5. Funcție pentru afișarea unui vector de obiecte.
+void afisareVector(struct Cinema* vector, int nrElemente) {
+	for (int i = 0; i < nrElemente; i++) {
+		afisare(vector[i]);
+		printf("\n");
+	}
+}
 
 int main()
 { 
@@ -111,7 +156,7 @@ int main()
 
 	modificareNrSali(&c2, 10);
 	afisare(c2);
-	printf("Hello World!");
+	printf("\n=========   Partea 2 vectori de structuri  =======\n");
 
 	dezalocare(&c1);
 	dezalocare(&c2);
@@ -123,12 +168,19 @@ int main()
 	vectorCinematografe = (struct Cinema*)malloc(sizeof(struct Cinema) * 5);
 
 	float incasariExemplu2[] = { 1700.5f, 20870.0f, 1500.25f };
-	vectorCinematografe[0] = initCinema("CinemaCity", 5, 3, incasariExemplu2);
-	vectorCinematografe[1] = initCinema("CinemaCity2", 5, 3, incasariExemplu2);
-	vectorCinematografe[2] = initCinema("CinemaCity3", 5, 3, incasariExemplu2);
-	vectorCinematografe[3] = initCinema("CinemaCity4", 5, 3, incasariExemplu2);
+	vectorCinematografe[0] = initCinema("CinemaCity", 6, 3, incasariExemplu2);
+	vectorCinematografe[1] = initCinema("CinemaCity2", 8, 3, incasariExemplu2);
+	vectorCinematografe[2] = initCinema("CinemaCity3", 7, 3, incasariExemplu);
+	vectorCinematografe[3] = initCinema("CinemaCity4", 5, 3, incasariExemplu);
 	vectorCinematografe[4] = initCinema("CinemaCity5", 5, 3, incasariExemplu2);
 
+	//2.3. Realizati o functie care sa copieze in alt vector obiectele care indeplinesc o anumita conditie.
+	struct Cinema* vectorCinematografeCopiate = NULL;
+	int nrElemCop = 0;
+	copiereCinemaCunrElementeMaiMreDecat(vectorCinematografe, 5, 5, &vectorCinematografeCopiate, &nrElemCop);
+
+
+	afisareVector(vectorCinematografeCopiate, nrElemCop);
 
 	
 	return 0;
