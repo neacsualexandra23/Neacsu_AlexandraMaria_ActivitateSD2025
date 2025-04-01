@@ -216,6 +216,7 @@ int main()
 	vectorCinematografe[4] = initCinema("CinemaCity5", 5, 5, incasariExemplu3);
 
 	//2.3. Realizati o functie care sa copieze in alt vector obiectele care indeplinesc o anumita conditie.
+	//copiereCinemaCunrElementeMaiMreDecat
 	struct Cinema* vectorCinematografeCopiate = NULL;
 	int nrElemCop = 0;
 	copiereCinemaCunrElementeMaiMreDecat(vectorCinematografe, 5, 5, &vectorCinematografeCopiate, &nrElemCop);
