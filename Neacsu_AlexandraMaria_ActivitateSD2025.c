@@ -95,7 +95,7 @@ void dezalocare(struct Cinema* c) {
 }
 //2.2.Funcție pentru copierea obiectelor care îndeplinesc o condiție într - un nou vector.
 //struct Cinema* copiereCinematografe(struct Cinema* vectorCinematografe, int nrSali);
-void copiereCinemaCunrElementeMaiMreDecat(struct Cinema* vector, int nrElemente, float prag, struct Cinema** vectorNou, int* dimensiune) {
+void copiereCinemaCuSaliMaiMareDecat(struct Cinema* vector, int nrElemente, float prag, struct Cinema** vectorNou, int* dimensiune) {
 
 	*dimensiune = 0;
 	for (int i = 0; i < nrElemente; i++)
@@ -170,6 +170,36 @@ void mutaCinemaCuNrIncasariMare(struct Cinema** vector, int* nrElemente, int NrI
 	}
 
 }
+//2.4. Funcție pentru concatenarea a doi vectori
+void concatenareVectori(struct Cinema** vectorRezultat, int* dimensiune,
+	 struct Cinema* vector1, int* dimensiuneV1,
+	 struct Cinema* vector2, int* dimensiuneV2) {
+	*dimensiune = (*dimensiuneV1) + (*dimensiuneV2);
+	*vectorRezultat = (struct Cinema*)malloc(sizeof(struct Cinema) * (*dimensiune));
+
+	for (int i = 0; i < *dimensiuneV1; i++) {
+		(*vectorRezultat)[i] = vector1[i];
+		(*vectorRezultat)[i].denumire = (char*)malloc(strlen(vector1[i].denumire) + 1);
+		strcpy_s((*vectorRezultat)[i].denumire, strlen(vector1[i].denumire) + 1, vector1[i].denumire);
+
+		(*vectorRezultat)[i].Incasari = (float*)malloc((*vectorRezultat)[i].NrIncasari * sizeof(float));
+		for (int k = 0; k < vector1[i].NrIncasari; k++) {
+			(*vectorRezultat)[i].Incasari[k] = vector1[i].Incasari[k];
+		}
+	}
+
+	for (int j = 0; j < *dimensiuneV2; j++) {
+		(*vectorRezultat)[j + (*dimensiuneV1)] = vector2[j];
+		(*vectorRezultat)[j + (*dimensiuneV1)].denumire = (char*)malloc(strlen(vector2[j].denumire) + 1);
+		strcpy_s((*vectorRezultat)[j + (*dimensiuneV1)].denumire, strlen(vector2[j].denumire) + 1, vector2[j].denumire);
+
+		(*vectorRezultat)[j + (*dimensiuneV1)].Incasari = (float*)malloc(
+			(*vectorRezultat)[j + (*dimensiuneV1)].NrIncasari * sizeof(float));
+		for (int l = 0; l < vector2[j].NrIncasari; l++) {
+			(*vectorRezultat)[j + (*dimensiuneV1)].Incasari[l] = vector2[j].Incasari[l];
+		}
+	}
+}
 
 //2.5. Funcție pentru afișarea unui vector de obiecte.
 void afisareVector(struct Cinema* vector, int nrElemente) {
@@ -178,6 +208,8 @@ void afisareVector(struct Cinema* vector, int nrElemente) {
 		printf("\n");
 	}
 }
+
+
 
 int main()
 { 
@@ -216,12 +248,12 @@ int main()
 	vectorCinematografe[4] = initCinema("CinemaCity5", 5, 5, incasariExemplu3);
 
 	//2.3. Realizati o functie care sa copieze in alt vector obiectele care indeplinesc o anumita conditie.
-	//copiereCinemaCunrElementeMaiMreDecat
+	//copiereCinemaCuSaliMaiMareDecat
 	struct Cinema* vectorCinematografeCopiate = NULL;
 	int nrElemCop = 0;
-	copiereCinemaCunrElementeMaiMreDecat(vectorCinematografe, 5, 5, &vectorCinematografeCopiate, &nrElemCop);
+	copiereCinemaCuSaliMaiMareDecat(vectorCinematografe, 5, 4, &vectorCinematografeCopiate, &nrElemCop);
 
-	printf("\nCinematgrafele cu numar de sali mai mare decat 5 :\n");
+	printf("\n2.3 Cinematgrafele cu numar de sali mai mare decat 5 :\n");
 	afisareVector(vectorCinematografeCopiate, nrElemCop);
 
 	//2.4. Realizati o functie care sa mute in alt vector obiectele care indeplinesc o anumita conditie.
@@ -230,12 +262,46 @@ int main()
 	int nrElemIncasariMari = 0;
 	int nrElemente = 5;
 	int prag = 4;
-	mutaCinemaCuNrIncasariMare(&vectorCinematografe, &nrElemente, prag, &vectorCinematografeIncasariMari, &nrElemIncasariMari);
+	//mutaCinemaCuNrIncasariMare(&vectorCinematografe, &nrElemente, prag, &vectorCinematografeIncasariMari, &nrElemIncasariMari);
 
 	
-	printf("\nCinematografele cu NrIncasari mai mari decat 4:\n");
+	printf("\n 2.4 Muta Cinematografele cu NrIncasari mai mari decat 4:\n");
 	afisareVector(vectorCinematografeIncasariMari, nrElemIncasariMari);
 
+	struct Cinema* vectorCinematografe1;
+	vectorCinematografe1 = (struct Cinema*)malloc(sizeof(struct Cinema) * 5);
+
+	float incasariExemplu4[] = { 129.5f, 20870.0f, 1500.25f };
+	float incasariExemplu5[] = { 129.5f, 20870.0f, 1500.25f, 345.7f, 45.5 };
+	vectorCinematografe1[0] = initCinema("CinemaCity", 6, 3, incasariExemplu4);
+	vectorCinematografe1[1] = initCinema("CinemaCity2", 8, 3, incasariExemplu5);
+	vectorCinematografe1[2] = initCinema("CinemaCity3", 7, 5, incasariExemplu4);
+	vectorCinematografe1[3] = initCinema("CinemaCity4", 5, 3, incasariExemplu4);
+	vectorCinematografe1[4] = initCinema("CinemaCity5", 5, 5, incasariExemplu5);
+	
+
+	struct Cinema* vectorCinematografe2;
+	vectorCinematografe2 = (struct Cinema*)malloc(sizeof(struct Cinema) * 4 );
+
+	float incasariExemplu6[] = { 129.5f, 20870.0f, 1500.25f };
+	float incasariExemplu7[] = { 129.5f, 20870.0f, 1500.25f, 345.7f, 45.5 };
+	vectorCinematografe2[0] = initCinema("CinemaCity", 6, 3, incasariExemplu6);
+	vectorCinematografe2[1] = initCinema("CinemaCity2", 8, 3, incasariExemplu7);
+	vectorCinematografe2[2] = initCinema("CinemaCity3", 7, 5, incasariExemplu6);
+	vectorCinematografe2[3] = initCinema("CinemaCity4", 5, 3, incasariExemplu6);
+	
+
+	// 2.5 concatenam 2 vectori de cinematografe vectorCinematografe1 si vectorCinematografe2 in vectorul vectorConcatenat
+	struct Cinema* vectorConcatenat = NULL;
+	int dimVectorConcatenat = 0;
+	int dimVector1 = 5;
+	int dimVector2 = 4;
+	concatenareVectori(&vectorConcatenat, &dimVectorConcatenat,
+		vectorCinematografe2, &dimVector2,
+		vectorCinematografe1, &dimVector1);
+	printf("\n2.5 Vectorul rezultat concatenat este:\n"); 
+	afisareVector(vectorConcatenat, dimVectorConcatenat);
+	
 	printf("\n=========   Partea 3. Fișiere  =======\n");
 	return 0;
 
