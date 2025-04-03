@@ -127,12 +127,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="fisier.c" />
     <ClCompile Include="Laborator01.c" />
     <ClCompile Include="Laborator02.c" />
     <ClCompile Include="Neacsu_AlexandraMaria_ActivitateSD2025.c" />
     <ClCompile Include="Seminar04.c" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="Cinematografe.txt" />
+    <Text Include="Cinematografe_salvate.txt" />
     <Text Include="data.txt" />
     <Text Include="masini.txt" />
   </ItemGroup>

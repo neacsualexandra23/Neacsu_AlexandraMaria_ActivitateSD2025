@@ -27,9 +27,14 @@
     <ClCompile Include="Laborator02.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="fisier.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="masini.txt" />
     <Text Include="data.txt" />
+    <Text Include="Cinematografe.txt" />
+    <Text Include="Cinematografe_salvate.txt" />
   </ItemGroup>
 </Project>

@@ -5,13 +5,32 @@
 #include<malloc.h>
 
 
-struct Masina {
-	int id;
-	int nrLocuri;
-	char* marca;
-	float capacitateC;
-	char normaPoluare;
-}; 
+//1.1 Definiti o structura de date care sa contina informatii despre un cinematograf.
+// Alexandra Maria Neacsu
+struct Cinema {
+	char* denumire;
+	int nrSali;
+	int NrIncasari;
+	float* Incasari;
+};
+/*
+struct Cinema initCinema(const char* denumire, int nrSali, int NrIncasari, const float* Incasari) {
+	struct Cinema c;
+	int i;
+
+	c.denumire = (char*)malloc(sizeof(char) * (strlen(denumire) + 1));
+	strcpy_s(c.denumire, strlen(denumire) + 1, denumire);
+
+
+	c.nrSali = nrSali;
+	c.NrIncasari = NrIncasari;
+	c.Incasari = (float*)malloc(sizeof(Incasari) * sizeof(float));
+	for (i = 0; i < NrIncasari; i++) {
+		c.Incasari[i] = Incasari[i];
+	}
+
+	return c;
+}
 /*
 
 struct Masina initializare(int id, int nrLocuri, const char* marca, float capacitateC, char normaPoluare) {

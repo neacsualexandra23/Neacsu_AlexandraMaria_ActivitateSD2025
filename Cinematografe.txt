@@ -1,0 +1,10 @@
+CityMall,10,2,18080.0,188850.0
+CityPark,9,1,200.0
+CityPlaza,11,3,80890.0,9760.0,12770.6
+CityAfi,5,2,13090.0,1650.0
+CityBaneasa,7,4,95.0,6.6,40.0,80.0
+CitySun,3,2,19.0,20.0
+CityLake,4,1,75.0
+CityPalace,5,3,270.0,24.0,27.0
+CityColloseum,8,2,97.0,65.0
+CityMega,5,3,100.0,77.6,80.0

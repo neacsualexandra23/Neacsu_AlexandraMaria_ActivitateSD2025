@@ -11,7 +11,7 @@ struct Cinema {
 	int NrIncasari;
 	float* Incasari;
 };
-
+/*
 struct Cinema initCinema(const char* denumire, int nrSali, int NrIncasari, const float* Incasari) {
     struct Cinema c;
     int i;
@@ -303,7 +303,10 @@ int main()
 	afisareVector(vectorConcatenat, dimVectorConcatenat);
 	
 	printf("\n=========   Partea 3. Fișiere  =======\n");
+	// in fisierul fisier.c
 	return 0;
 
 
 }
+
+*/
