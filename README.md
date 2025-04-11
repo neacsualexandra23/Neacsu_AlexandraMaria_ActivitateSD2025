@@ -52,7 +52,7 @@ Funcții necesare:
 	2.5. Funcție pentru afișarea unui vector de obiecte.👍
 	Apelarea tuturor funcțiilor în main().👍
 
-4. Fișiere
+3. Fișiere
    
 ===========
 
