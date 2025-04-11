@@ -73,5 +73,25 @@ Funcții necesare:
 	4.2. Functie pentru mutarea liniile din matrice, astfel incat acestea sa fie sortate dupa numarul de elemente de pe linie
 	4.3. Funcție pentru afișarea elementelor din matrice.
 
+
+ 5. Liste simplu înlănțuite
+    
+ =========================
+    
+    	5.1 Funcție pentru ștergerea unui nod de pe o poziție dată.
+    	5.2 Funcție pentru inserarea elementelor în ordine crescătoare după un atribut.
+	5.3 Funcție pentru salvarea într-un vector a elementelor care îndeplinesc o condiție (deep copy).
+	5.4 Funcție pentru interschimbarea a două elemente în listă pe baza pozițiilor.
+    
+7. Liste dublu înlănțuite
+   
+==========================
+
+	6.1 Funcție pentru ștergerea unui nod de pe o poziție dată.
+	6.2 Funcție pentru inserarea elementelor în ordine crescătoare după un atribut.
+	6.3 Funcții pentru parcurgerea listei în ordine crescătoare și descrescătoare.
+	6.4 Funcție pentru salvarea elementelor într-o listă simplu înlănțuită (deep copy).
+	6.5 Funcție pentru interschimbarea a două elemente din listă pe baza pozițiilor.
+
 	 
 	 
