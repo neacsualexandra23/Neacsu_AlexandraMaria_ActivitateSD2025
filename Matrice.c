@@ -41,6 +41,13 @@ void afisareCinema(struct Cinema c) {
 		printf("  Incasare %d: %.2f \n", i + 1, c.Incasari[i]);
 	}
 }
+void afisareVector(struct Cinema* vector, int nrElemente) {
+	for (int i = 0; i < nrElemente; i++) {
+		afisareCinema(vector[i]);
+		printf("\n");
+	}
+}
+
 
 struct Cinema citireCinemaDinFisier(FILE* file) {
 	char buffer[256];
@@ -52,7 +59,7 @@ struct Cinema citireCinemaDinFisier(FILE* file) {
 	aux = strtok(buffer, ",\n");
 	c1.denumire = malloc(strlen(aux) + 1);
 	strcpy_s(c1.denumire, strlen(aux) + 1, aux);
-	//printf("Denumire: %s\n", c1.denumire);
+	//printf("\n Denumire: %s\n", c1.denumire);
 
 	aux = strtok(NULL, ",\n");
 	c1.nrSali = atoi(aux);
@@ -75,18 +82,20 @@ struct Cinema citireCinemaDinFisier(FILE* file) {
 
 	return c1;
 }
+
+
 void inserareCinemaInVector(struct Cinema c, struct Cinema** vector, int index) {
 
-
+	printf("*hey: %s\n");
 
 	(*vector)[index].denumire = malloc(strlen(c.denumire) + 1);
 	strcpy_s((*vector)[index].denumire, strlen(c.denumire) + 1, c.denumire);
-	//printf("Denumire: %s\n", (*vector)[index].denumire);
+	printf("*Denumire: %s\n", (*vector)[index].denumire);
 
 	(*vector)[index].nrSali = c.nrSali;
-	//printf("Numar sali: %d\n", (*vector)[index].nrSali);
+	printf("*Numar sali: %d\n", (*vector)[index].nrSali);
 	(*vector)[index].NrIncasari = c.NrIncasari;
-	//printf("Numar incasari: %d\n", (*vector)[index].NrIncasari);
+	printf("*Numar incasari: %d\n", (*vector)[index].NrIncasari);
 
 	(*vector)[index].Incasari = malloc(c.NrIncasari * sizeof(float));
 	for (int i = 0; i < c.NrIncasari; i++) {
@@ -95,6 +104,24 @@ void inserareCinemaInVector(struct Cinema c, struct Cinema** vector, int index) 
 	}
 
 }
+
+//3.1 Definiti o functie care sa aloce un vector de structuri de tip Cinema, 
+// sa citeasca datele dintr-un fisier text si sa le afiseze pe ecran.
+void citesteCinemaDinFisier(struct Cinema** vector, const char* numeFisier, int dimensiune) {
+	*vector = malloc(sizeof(struct Cinema) * dimensiune);
+	FILE* fisier = fopen(numeFisier, "r");
+	int contor = 0;
+	while (contor < dimensiune && !feof(fisier)) {
+		struct Cinema p = citireCinemaDinFisier(fisier);
+
+		inserareCinemaInVector(p, vector, contor);
+		contor++;
+	}
+	fclose(fisier);
+}
+
+
+
 int main() {
 	struct Cinema* vector = NULL;
 	int nrElemente = 10; // presupunem 10 cinematografe în fișier
@@ -104,21 +131,20 @@ int main() {
 	FILE* fisier = fopen("Cinematografe.txt", "r");
 	if (!fisier) {
 		printf("Eroare la deschiderea fisierului!\n");
-		free(vector);
+	
 		return 1;
 	}
+	printf("Fisierul este deschis in read!\n");
 
 
 	printf("\nAfisare vector:\n");
 
-	//citesteCinemaDinFisier(&vector, "Cinematografe.txt", nrElemente);
-	//afisareVector(vector, nrElemente);
+	//4.1Citirea obiectelor dintr-un fișier și salvarea într-un vector.
+	citesteCinemaDinFisier(&vector, "Cinematografe.txt", nrElemente);
+	afisareVector(vector, nrElemente);
 
 
-	// Cleanup
-	fclose(fisier);
-	//dezalocareCinema(&p);
-	dezalocareVector(&vector, &nrElemente);
+
 
 	return 0;
 }
