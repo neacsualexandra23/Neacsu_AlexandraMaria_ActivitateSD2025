@@ -5,7 +5,7 @@
 #include<malloc.h>
 #include<conio.h>
 #include<stdbool.h>
-
+/*
 
 //1.1 Definiti o structura de date care sa contina informatii despre un cinematograf.
 // Alexandra Maria Neacsu
@@ -161,7 +161,7 @@ void salveazaCinemaInFisier(struct Cinema c, const char* numeFisier) {
 }
 
 //3.3 Scrieti o functie care va salva un vector de obiecte intr - un fisier text.
-/*void salveazaVectorCinemaInFisier(struct Cinema* vector, int nrElemente, const char* numeFisier) {
+void salveazaVectorCinemaInFisier(struct Cinema* vector, int nrElemente, const char* numeFisier) {
 	FILE* f = fopen(numeFisier, "w"); // "w" = scriere nouă (șterge ce era înainte)
 	if (!f) {
 		printf("Eroare la deschiderea fisierului %s\n", numeFisier);
@@ -177,7 +177,7 @@ void salveazaCinemaInFisier(struct Cinema c, const char* numeFisier) {
 
 		fprintf(f, "\n"); // Trecem la linia următoare pentru următorul obiect
 	}
-	*/
+	
 void dezalocareVector(struct Cinema** vector, int* nrElemente) {
 	for (int i = 0; i < *nrElemente; i++) {
 		dezalocareCinema(&(*vector)[i]);
@@ -226,3 +226,4 @@ int main() {
 
 	return 0;
 }
+*/
