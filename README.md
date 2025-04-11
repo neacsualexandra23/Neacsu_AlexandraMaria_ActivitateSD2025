@@ -42,6 +42,7 @@ Funcții necesare:
          void afisare(struct Cinema c)
 	 
 2. Vectori
+   
 ============
 •	2.1. Crearea unui vector alocat dinamic cu cel puțin 5 obiecte de tipul structurii definite.👍
 •	2.2. Funcție pentru copierea obiectelor care îndeplinesc o condiție într-un nou vector.👍
@@ -51,6 +52,7 @@ Funcții necesare:
 •	Apelarea tuturor funcțiilor în main().👍
 
 4. Fișiere
+   
 ===========
 •	Crearea unui fișier cu cel puțin 10 obiecte.👍
 •	3.1. Funcție pentru citirea obiectelor din fișier și salvarea într-un vector.👍
