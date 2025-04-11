@@ -44,20 +44,22 @@ Funcții necesare:
 2. Vectori
    
 ============
-•	2.1. Crearea unui vector alocat dinamic cu cel puțin 5 obiecte de tipul structurii definite.👍
-•	2.2. Funcție pentru copierea obiectelor care îndeplinesc o condiție într-un nou vector.👍
-•	2.3. Funcție pentru mutarea obiectelor care îndeplinesc o altă condiție într-un nou vector.👍
-•	2.4. Funcție pentru concatenarea a doi vectori.👍
-•	2.5. Funcție pentru afișarea unui vector de obiecte.👍
-•	Apelarea tuturor funcțiilor în main().👍
+
+	2.1. Crearea unui vector alocat dinamic cu cel puțin 5 obiecte de tipul structurii definite.👍
+	2.2. Funcție pentru copierea obiectelor care îndeplinesc o condiție într-un nou vector.👍
+	2.3. Funcție pentru mutarea obiectelor care îndeplinesc o altă condiție într-un nou vector.👍
+	2.4. Funcție pentru concatenarea a doi vectori.👍
+	2.5. Funcție pentru afișarea unui vector de obiecte.👍
+	Apelarea tuturor funcțiilor în main().👍
 
 4. Fișiere
    
 ===========
-•	Crearea unui fișier cu cel puțin 10 obiecte.👍
-•	3.1. Funcție pentru citirea obiectelor din fișier și salvarea într-un vector.👍
-•	3.2. Funcție pentru salvarea unui obiect într-un fișier text.👍
-•	3.3. Funcție pentru salvarea unui vector de obiecte într-un fișier text.👍
+
+	Crearea unui fișier cu cel puțin 10 obiecte.👍
+	3.1. Funcție pentru citirea obiectelor din fișier și salvarea într-un vector.👍
+	3.2. Funcție pentru salvarea unui obiect într-un fișier text.👍
+	3.3. Funcție pentru salvarea unui vector de obiecte într-un fișier text.👍
 
 	 
 	 
