@@ -131,6 +131,7 @@
     <ClCompile Include="Laborator01.c" />
     <ClCompile Include="Laborator02.c" />
     <ClCompile Include="Laborator03.c" />
+    <ClCompile Include="Matrice.c" />
     <ClCompile Include="Neacsu_AlexandraMaria_ActivitateSD2025.c" />
     <ClCompile Include="Seminar04.c" />
   </ItemGroup>
