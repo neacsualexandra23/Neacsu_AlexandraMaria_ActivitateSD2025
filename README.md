@@ -62,6 +62,7 @@ Funcții necesare:
 	3.3. Funcție pentru salvarea unui vector de obiecte într-un fișier text.👍
 
  4. Matrice
+    
  ===========
 
 	4.0. Citirea obiectelor dintr-un fișier și salvarea într-un vector.
