@@ -66,23 +66,23 @@ Funcții necesare:
     
  ===========
 
-	4.0. Citirea obiectelor dintr-un fișier și salvarea într-un vector.
+	4.0. Citirea obiectelor dintr-un fișier și salvarea într-un vector. 👍
 	4.1. Functie care sa copieze (deep copy) elementele din vector intr-o matrice alocată dinamic. 
              Asezarea in matrice pe linii a obiectelor o faceti dupa un criteriu aplicat unui atribut. 
-	     Astfel veti obține mai multe clustere reprezentate de liniile matricei.
+	     Astfel veti obține mai multe clustere reprezentate de liniile matricei.👍
  
-	4.2. Functie pentru mutarea liniile din matrice, astfel incat acestea sa fie sortate dupa numarul de elemente de pe linie
-	4.3. Funcție pentru afișarea elementelor din matrice.
+	4.2. Functie pentru mutarea liniile din matrice, astfel incat acestea sa fie sortate dupa numarul de elemente de pe linie👍
+	4.3. Funcție pentru afișarea elementelor din matrice.👍
 
 
  5. Liste simplu înlănțuite
     
  =========================
     
-    	5.1 Funcție pentru ștergerea unui nod de pe o poziție dată.
-    	5.2 Funcție pentru inserarea elementelor în ordine crescătoare după un atribut.
-	5.3 Funcție pentru salvarea într-un vector a elementelor care îndeplinesc o condiție (deep copy).
-	5.4 Funcție pentru interschimbarea a două elemente în listă pe baza pozițiilor.
+5.1 Funcție pentru ștergerea unui nod de pe o poziție dată.
+5.2 Funcție pentru inserarea elementelor în ordine crescătoare după un atribut.
+5.3 Funcție pentru salvarea într-un vector a elementelor care îndeplinesc o condiție (deep copy).
+5.4 Funcție pentru interschimbarea a două elemente în listă pe baza pozițiilor.
     
 7. Liste dublu înlănțuite
    
