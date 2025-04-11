@@ -90,12 +90,12 @@ void inserareCinemaInVector(struct Cinema c, struct Cinema** vector, int index) 
 
 	(*vector)[index].denumire = malloc(strlen(c.denumire) + 1);
 	strcpy_s((*vector)[index].denumire, strlen(c.denumire) + 1, c.denumire);
-	printf("*Denumire: %s\n", (*vector)[index].denumire);
+	//printf("*Denumire: %s\n", (*vector)[index].denumire);
 
 	(*vector)[index].nrSali = c.nrSali;
-	printf("*Numar sali: %d\n", (*vector)[index].nrSali);
+	//printf("*Numar sali: %d\n", (*vector)[index].nrSali);
 	(*vector)[index].NrIncasari = c.NrIncasari;
-	printf("*Numar incasari: %d\n", (*vector)[index].NrIncasari);
+	//printf("*Numar incasari: %d\n", (*vector)[index].NrIncasari);
 
 	(*vector)[index].Incasari = malloc(c.NrIncasari * sizeof(float));
 	for (int i = 0; i < c.NrIncasari; i++) {
@@ -119,7 +119,83 @@ void citesteCinemaDinFisier(struct Cinema** vector, const char* numeFisier, int 
 	}
 	fclose(fisier);
 }
+// 4.2 Functie care sa copieze (deep copy) elementele din vector intr-o matrice alocată dinamic. 
+// Asezarea in matrice pe linii a obiectelor o faceti dupa un criteriu aplicat unui atribut.
+// Astfel veti obține mai multe clustere reprezentate de liniile matricei.
 
+int gasesteIndexCategorie(int* categorii, int nrCategorii, int valoare) {
+	for (int i = 0; i < nrCategorii; i++) {
+		if (categorii[i] == valoare)
+			return i;
+	}
+	return -1;
+}
+// Deep copy Cinema
+struct Cinema deepCopyCinema(struct Cinema c) {
+	struct Cinema copie;
+	copie.denumire = malloc(strlen(c.denumire) + 1);
+	strcpy_s(copie.denumire, strlen(c.denumire) + 1, c.denumire);
+
+	copie.nrSali = c.nrSali;
+	copie.NrIncasari = c.NrIncasari;
+	copie.Incasari = malloc(c.NrIncasari * sizeof(float));
+	for (int i = 0; i < c.NrIncasari; i++) {
+		copie.Incasari[i] = c.Incasari[i];
+	}
+	return copie;
+}
+// 4.2: Copiere in matrice (grupare pe nrSali)
+void copiereInMatricePeCriteriu(struct Cinema* vector, int nrElemente,
+	struct Cinema*** matrice, int** vectorCategorii, int* nrCategorii, int** dimPeLinie)
+{
+	int* categorii = malloc(nrElemente * sizeof(int));
+	int* dim = calloc(nrElemente, sizeof(int)); // nr elemente pe linie
+	int totalCategorii = 0;
+
+	// 1. Identificăm valorile unice de nrSali
+	for (int i = 0; i < nrElemente; i++) {
+		int index = gasesteIndexCategorie(categorii, totalCategorii, vector[i].nrSali);
+		if (index == -1) {
+			categorii[totalCategorii++] = vector[i].nrSali;
+		}
+	}
+
+	// 2. Contăm câte elemente vor fi pe fiecare linie (grupare)
+	for (int i = 0; i < nrElemente; i++) {
+		int index = gasesteIndexCategorie(categorii, totalCategorii, vector[i].nrSali);
+		dim[index]++;
+	}
+
+	// 3. Alocăm matricea
+	struct Cinema** tempMatrice = malloc(totalCategorii * sizeof(struct Cinema*));
+	for (int i = 0; i < totalCategorii; i++) {
+		tempMatrice[i] = malloc(dim[i] * sizeof(struct Cinema));
+		dim[i] = 0; // resetăm pentru inserare
+	}
+
+	// 4. Inserăm cu deep copy în matrice
+	for (int i = 0; i < nrElemente; i++) {
+		int index = gasesteIndexCategorie(categorii, totalCategorii, vector[i].nrSali);
+		tempMatrice[index][dim[index]++] = deepCopyCinema(vector[i]);
+	}
+
+	// 5. Returnăm rezultatele
+	*matrice = tempMatrice;
+	*vectorCategorii = categorii;
+	*nrCategorii = totalCategorii;
+	*dimPeLinie = dim;
+}
+void afisareMatriceCinema(struct Cinema** matrice, int nrCategorii, int* categorii, int* dimPeLinie) {
+	for (int i = 0; i < nrCategorii; i++) {
+		printf("Cluster %d - Cinematografe cu nrSali = %d:\n", i + 1, categorii[i]);
+		for (int j = 0; j < dimPeLinie[i]; j++) {
+			printf("  [%d,%d] -> ", i, j);
+			afisareCinema(matrice[i][j]);
+			printf("\n");
+		}
+		printf("====================================\n");
+	}
+}
 
 
 int main() {
@@ -139,10 +215,20 @@ int main() {
 
 	printf("\nAfisare vector:\n");
 
-	//4.1Citirea obiectelor dintr-un fișier și salvarea într-un vector.
+	//4.1 Citirea obiectelor dintr-un fișier și salvarea într-un vector.
 	citesteCinemaDinFisier(&vector, "Cinematografe.txt", nrElemente);
 	afisareVector(vector, nrElemente);
 
+	//4.2 alegem nrSali ca atribut de grupare pentru a copia elementele vectorului anterior intr-o matrice 
+
+	struct Cinema** matrice = NULL;
+	int* categorii = NULL;
+	int* dimPeLinie = NULL;
+	int nrCategorii = 0;
+
+	copiereInMatricePeCriteriu(vector, nrElemente, &matrice, &categorii, &nrCategorii, &dimPeLinie);
+
+	afisareMatriceCinema(matrice, nrCategorii, categorii, dimPeLinie);
 
 
 
