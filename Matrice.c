@@ -111,8 +111,8 @@ int main() {
 
 	printf("\nAfisare vector:\n");
 
-	citesteCinemaDinFisier(&vector, "Cinematografe.txt", nrElemente);
-	afisareVector(vector, nrElemente);
+	//citesteCinemaDinFisier(&vector, "Cinematografe.txt", nrElemente);
+	//afisareVector(vector, nrElemente);
 
 
 	// Cleanup

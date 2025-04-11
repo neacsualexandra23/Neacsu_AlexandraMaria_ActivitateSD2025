@@ -5,13 +5,14 @@
 
 //1.1 Definiti o structura de date care sa contina informatii despre un cinematograf.
 // Alexandra Maria Neacsu
+/*
 struct Cinema {
 	char* denumire;
 	int nrSali;
 	int NrIncasari;
 	float* Incasari;
 };
-/*
+
 struct Cinema initCinema(const char* denumire, int nrSali, int NrIncasari, const float* Incasari) {
     struct Cinema c;
     int i;
