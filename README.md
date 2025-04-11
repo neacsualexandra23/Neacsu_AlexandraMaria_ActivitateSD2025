@@ -61,5 +61,13 @@ Funcții necesare:
 	3.2. Funcție pentru salvarea unui obiect într-un fișier text.👍
 	3.3. Funcție pentru salvarea unui vector de obiecte într-un fișier text.👍
 
+ 4. Matrice
+ ===========
+
+	4.0. Citirea obiectelor dintr-un fișier și salvarea într-un vector.
+	4.1. Functie care sa copieze (deep copy) elementele din vector intr-o matrice alocată dinamic. Asezarea in matrice pe linii a 		obiectelor o faceti dupa un criteriu aplicat unui atribut. Astfel veti obține mai multe clustere reprezentate de liniile matricei.
+	4.2. Functie pentru mutarea liniile din matrice, astfel incat acestea sa fie sortate dupa numarul de elemente de pe linie
+	4.3. Funcție pentru afișarea elementelor din matrice.
+
 	 
 	 
