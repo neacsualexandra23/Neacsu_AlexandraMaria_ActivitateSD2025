@@ -9,29 +9,29 @@ struct Ferma {
 };
 
 struct nod {
-	Ferma info;
-	nod* next;
+	struct Ferma info;
+	struct nod* next;
 };
 
-Ferma createFerma(const char* nume, int nrAnimale) {
-	Ferma f;
+struct Ferma createFerma(const char* nume, int nrAnimale) {
+	struct Ferma f;
 	f.nume = (char*)malloc(sizeof(char) * (strlen(nume) + 1));
 	strcpy(f.nume, nume);
 	f.nrAnimale = nrAnimale;
 	return f;
 }
 
-nod* createNod(Ferma f, nod* next) {
-	nod* nou = (nod*)malloc(sizeof(nod));
+struct nod* createNod(struct Ferma f, struct nod* next) {
+	struct nod* nou = (struct nod*)malloc(sizeof(struct nod));
 	nou->info = f;
 	nou->next = next;
 	return nou;
 }
 
-nod* inserareSfarsit(nod* cap, Ferma f) {
-	nod* nou = createNod(f, NULL);
+struct nod* inserareSfarsit(struct nod* cap, struct Ferma f) {
+	struct nod* nou = createNod(f, NULL);
 	if (cap) {
-		nod* temp = cap;
+		struct nod* temp = cap;
 		while (temp->next) {
 			temp = temp->next;
 		}
@@ -46,11 +46,11 @@ nod* inserareSfarsit(nod* cap, Ferma f) {
 }
 
 
-void afisareFerma(Ferma f) {
+void afisareFerma(struct Ferma f) {
 	printf("Ferma %s are %d animale.\n", f.nume, f.nrAnimale);
 }
 
-void afisareListaFerme(nod* cap) {
+void afisareListaFerme(struct nod* cap) {
 	while (cap) {
 		afisareFerma(cap->info);
 		cap = cap->next;
@@ -61,12 +61,12 @@ void afisareListaFerme(nod* cap) {
 	//}
 }
 
-nod* inserareInceput(nod* cap, Ferma f) {
-	nod* nou = createNod(f, cap);
+struct nod* inserareInceput(struct nod* cap, struct Ferma f) {
+	struct nod* nou = createNod(f, cap);
 	return nou;
 }
 
-float medieAnimale(nod* cap) {
+float medieAnimale(struct nod* cap) {
 	if (cap) {
 		int nr = 0, s = 0;
 		while (cap) {
@@ -81,9 +81,9 @@ float medieAnimale(nod* cap) {
 	}
 }
 
-nod* stergereLista(nod* cap) {
+struct nod* stergereLista(struct nod* cap) {
 	while (cap) {
-		nod* aux = cap;
+		struct nod* aux = cap;
 		cap = cap->next;
 		free(aux->info.nume);
 		free(aux);
@@ -91,7 +91,7 @@ nod* stergereLista(nod* cap) {
 	return cap;
 }
 
-void stergereListaRecursiv(nod** cap) {
+void stergereListaRecursiv(struct nod** cap) {
 	if (*cap) {
 		stergereListaRecursiv(&(*cap)->next);
 		free((*cap)->info.nume);
@@ -100,11 +100,11 @@ void stergereListaRecursiv(nod** cap) {
 	}
 }
 
-nod* inserareInainteDeUnNodCuValoareaData(nod* cap, const char* nume, Ferma f) {
-	nod* nou = createNod(f, NULL);
+struct nod* inserareInainteDeUnNodCuValoareaData(struct nod* cap, const char* nume, struct Ferma f) {
+	struct nod* nou = createNod(f, NULL);
 	if (cap) {
-		nod* p = cap;
-		nod* adresaMax = NULL;
+		struct nod* p = cap;
+		struct nod* adresaMax = NULL;
 		while (p) {
 			if (p->next && strcmp(p->next->info.nume, nume) == 0) {
 				if (!adresaMax) {
@@ -142,9 +142,9 @@ nod* inserareInainteDeUnNodCuValoareaData(nod* cap, const char* nume, Ferma f) {
 }
 
 void main() {
-	Ferma f = createFerma("faraAnimale", 1);
-	nod* node = createNod(f, NULL);
-	nod* cap = NULL;
+	struct Ferma f = createFerma("faraAnimale", 1);
+	struct nod* node = createNod(f, NULL);
+	struct nod* cap = NULL;
 	cap = inserareSfarsit(cap, createFerma("Cocosul vesel", 200));
 	cap = inserareSfarsit(cap, createFerma("Ferma", 100));
 	cap = inserareSfarsit(cap, createFerma("Avicola", 400));
