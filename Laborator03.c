@@ -5,6 +5,11 @@
 #include<malloc.h>
 #include<conio.h>
 #include<stdbool.h>
+// lucrul cu matrici de structuri 
+// matrice de structuri citite de la tastatura
+// afisare matrice de structuri
+// dezalocare matrice
+
 /*
 struct Bilet {
 	int cod;
@@ -101,7 +106,7 @@ void main()
 		}
 		free(matrice[i]);
 	}
-	*
+	
 	free(matrice);
 	free(nrColoane);
 	free(b1.destinatie);

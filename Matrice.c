@@ -5,6 +5,8 @@
 #include<malloc.h>
 #include<conio.h>
 #include<stdbool.h>
+// vezi si matrice citite de la taastatura in Laborato03.c
+
 
 struct Cinema {
 	char* denumire;
@@ -12,6 +14,7 @@ struct Cinema {
 	int NrIncasari;
 	float* Incasari;
 };
+
 struct Cinema initCinema(const char* denumire, int nrSali, int NrIncasari, const float* Incasari) {
 	struct Cinema c;
 	int i;
@@ -86,7 +89,7 @@ struct Cinema citireCinemaDinFisier(FILE* file) {
 
 void inserareCinemaInVector(struct Cinema c, struct Cinema** vector, int index) {
 
-	printf("*hey: %s\n");
+	//printf("*hey: %s\n");
 
 	(*vector)[index].denumire = malloc(strlen(c.denumire) + 1);
 	strcpy_s((*vector)[index].denumire, strlen(c.denumire) + 1, c.denumire);
@@ -107,7 +110,7 @@ void inserareCinemaInVector(struct Cinema c, struct Cinema** vector, int index) 
 
 //3.1 Definiti o functie care sa aloce un vector de structuri de tip Cinema, 
 // sa citeasca datele dintr-un fisier text si sa le afiseze pe ecran.
-void citesteCinemaDinFisier(struct Cinema** vector, const char* numeFisier, int dimensiune) {
+void citesteCinematografeDinFisier(struct Cinema** vector, const char* numeFisier, int dimensiune) {
 	*vector = malloc(sizeof(struct Cinema) * dimensiune);
 	FILE* fisier = fopen(numeFisier, "r");
 	int contor = 0;
@@ -160,26 +163,26 @@ void copiereInMatricePeCriteriu(struct Cinema* vector, int nrElemente,
 		}
 	}
 
-	// 2. Contăm câte elemente vor fi pe fiecare linie (grupare)
+	// 2. Cautam cate elemente vor fi pe fiecare linie (grupare)
 	for (int i = 0; i < nrElemente; i++) {
 		int index = gasesteIndexCategorie(categorii, totalCategorii, vector[i].nrSali);
 		dim[index]++;
 	}
 
-	// 3. Alocăm matricea
+	// 3. Alocam matricea
 	struct Cinema** tempMatrice = malloc(totalCategorii * sizeof(struct Cinema*));
 	for (int i = 0; i < totalCategorii; i++) {
 		tempMatrice[i] = malloc(dim[i] * sizeof(struct Cinema));
 		dim[i] = 0; // resetăm pentru inserare
 	}
 
-	// 4. Inserăm cu deep copy în matrice
+	// 4. Inseram cu deep copy in matrice
 	for (int i = 0; i < nrElemente; i++) {
 		int index = gasesteIndexCategorie(categorii, totalCategorii, vector[i].nrSali);
 		tempMatrice[index][dim[index]++] = deepCopyCinema(vector[i]);
 	}
 
-	// 5. Returnăm rezultatele
+	// 5. Returnam rezultatele
 	*matrice = tempMatrice;
 	*vectorCategorii = categorii;
 	*nrCategorii = totalCategorii;
@@ -197,7 +200,31 @@ void afisareMatriceCinema(struct Cinema** matrice, int nrCategorii, int* categor
 	}
 }
 
+// 4.3.Functie pentru mutarea liniile din matrice, astfel incat acestea sa fie sortate 
+// dupa numarul de elemente de pe linie
+void sorteazaLiniileMatricei(struct Cinema*** matrice, int* nrCategorii, int** categorii, int** dimPeLinie) {
+	for (int i = 0; i < *nrCategorii - 1; i++) {
+		for (int j = i + 1; j < *nrCategorii; j++) {
+			if ((*dimPeLinie)[i] > (*dimPeLinie)[j]) {
+				// schimba dimensiuni
+				int tempDim = (*dimPeLinie)[i];
+				(*dimPeLinie)[i] = (*dimPeLinie)[j];
+				(*dimPeLinie)[j] = tempDim;
 
+				// schimba categorii
+				int tempCat = (*categorii)[i];
+				(*categorii)[i] = (*categorii)[j];
+				(*categorii)[j] = tempCat;
+
+				// schimba liniile din matrice
+				struct Cinema* tempLinie = (*matrice)[i];
+				(*matrice)[i] = (*matrice)[j];
+				(*matrice)[j] = tempLinie;
+			}
+		}
+	}
+}
+/*
 int main() {
 	struct Cinema* vector = NULL;
 	int nrElemente = 10; // presupunem 10 cinematografe în fișier
@@ -210,13 +237,13 @@ int main() {
 	
 		return 1;
 	}
-	printf("Fisierul este deschis in read!\n");
-
-
-	printf("\nAfisare vector:\n");
+	
+	
 
 	//4.1 Citirea obiectelor dintr-un fișier și salvarea într-un vector.
-	citesteCinemaDinFisier(&vector, "Cinematografe.txt", nrElemente);
+	citesteCinematografeDinFisier(&vector, "Cinematografe.txt", nrElemente);
+	printf( "\n\n---Afisare vector dupa ce citim din fisierul Cinematografe.txt  ---\n");
+	printf( "\n\n================================================================  \n");
 	afisareVector(vector, nrElemente);
 
 	//4.2 alegem nrSali ca atribut de grupare pentru a copia elementele vectorului anterior intr-o matrice 
@@ -225,12 +252,33 @@ int main() {
 	int* categorii = NULL;
 	int* dimPeLinie = NULL;
 	int nrCategorii = 0;
+	fprintf(stdout, "\n\n---Afisare matrice dupa ce le grupam dupa atribut nrSali  ---\n");
+	printf("\n\n================================================================  ---\n");
 
 	copiereInMatricePeCriteriu(vector, nrElemente, &matrice, &categorii, &nrCategorii, &dimPeLinie);
 
 	afisareMatriceCinema(matrice, nrCategorii, categorii, dimPeLinie);
 
+	// 4.3.Functie pentru mutarea liniile din matrice, astfel incat acestea sa fie sortate 
+	// dupa numarul de elemente de pe linie
+	
+	sorteazaLiniileMatricei(&matrice, &nrCategorii, &categorii, &dimPeLinie);
 
-
+	printf("\n---Afisare matrice dupa sortare ---\n");
+	afisareMatriceCinema(matrice, nrCategorii, categorii, dimPeLinie);
+	// 5. Eliberare memorie
+	for (int i = 0; i < nrElemente; i++) {
+		free(vector[i].denumire);
+		free(vector[i].Incasari);
+	}
+	free(vector);
+	for (int i = 0; i < nrCategorii; i++) {
+		for (int j = 0; j < dimPeLinie[i]; j++) {
+			free(matrice[i][j].denumire);
+			free(matrice[i][j].Incasari);
+		}
+		free(matrice[i]);
+	}
 	return 0;
 }
+*/
