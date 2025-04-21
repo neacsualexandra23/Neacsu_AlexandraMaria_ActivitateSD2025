@@ -71,7 +71,8 @@ Funcții necesare:
              Asezarea in matrice pe linii a obiectelor o faceti dupa un criteriu aplicat unui atribut. 
 	     Astfel veti obține mai multe clustere reprezentate de liniile matricei.👍
  
-	4.2. Functie pentru mutarea liniile din matrice, astfel incat acestea sa fie sortate dupa numarul de elemente de pe linie👍
+	4.2. Functie pentru mutarea liniile din matrice, astfel incat acestea sa fie sortate 
+             dupa numarul de elemente de pe linie👍
 	4.3. Funcție pentru afișarea elementelor din matrice.👍
 
 
