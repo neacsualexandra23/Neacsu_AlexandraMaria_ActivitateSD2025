@@ -97,48 +97,53 @@ Funcții necesare:
 
  7. HashTable
  ==================
-7.1 Crearea unei tabele de dispersie pentru stocarea clădirilor din București (clustere pe baza anului construirii).
-7.2 Funcție pentru afișarea clădirilor dintr-un anumit an.
-7.3 Funcție pentru ștergerea unei clădiri pe baza ID-ului și anului construirii.
-7.4 Funcție pentru ștergerea unei clădiri doar pe baza ID-ului.
-Observarea diferenței dintre cele două funcții de ștergere.
-7.5 Funcție pentru salvarea într-un vector a clădirilor dintr-un anumit an (deep copy).
-7.6 Funcție pentru modificarea anului de construire a unei clădiri (cu actualizarea clusterizării).
+	
+	7.1 Crearea unei tabele de dispersie pentru stocarea clădirilor din București (clustere pe baza anului construirii).
+	7.2 Funcție pentru afișarea clădirilor dintr-un anumit an.
+	7.3 Funcție pentru ștergerea unei clădiri pe baza ID-ului și anului construirii.
+	7.4 Funcție pentru ștergerea unei clădiri doar pe baza ID-ului.
+	Observarea diferenței dintre cele două funcții de ștergere.
+	7.5 Funcție pentru salvarea într-un vector a clădirilor dintr-un anumit an (deep copy).
+	7.6 Funcție pentru modificarea anului de construire a unei clădiri (cu actualizarea clusterizării).
 
 8. Heap
 ==========
-8.1 Implementarea unui sistem pentru gestiunea pacienților la Unitatea de Primiri Urgențe (UPU).
-8.2 Structura Pacient include un grad de urgență.
-8.3 Utilizarea unui Max-Heap pentru gestionarea pacienților astfel încât cei mai urgenti să fie preluați cu prioritate.
+
+	8.1 Implementarea unui sistem pentru gestiunea pacienților la Unitatea de Primiri Urgențe (UPU).
+	8.2 Structura Pacient include un grad de urgență.
+	8.3 Utilizarea unui Max-Heap pentru gestionarea pacienților astfel încât cei mai urgenti să fie preluați cu prioritate.
    
 9. Arbori binari de căutare (BST)
 =================================
-9.1 Funcție pentru ștergerea unui nod pe baza unui ID, menținând proprietățile arborelui BST.
-9.2 Funcție pentru returnarea subarborelui cu înălțimea mai mare.
-9.3 Funcție pentru numărarea nodurilor subordonate unui nod.
-9.4 Funcție pentru returnarea subarborelui cu mai multe noduri în subordine.
+	
+	9.1 Funcție pentru ștergerea unui nod pe baza unui ID, menținând proprietățile arborelui BST.
+	9.2 Funcție pentru returnarea subarborelui cu înălțimea mai mare.
+	9.3 Funcție pentru numărarea nodurilor subordonate unui nod.
+	9.4 Funcție pentru returnarea subarborelui cu mai multe noduri în subordine.
 
 10. Arbori AVL
 ================
-10.1 Implementarea unui arbore binar de căutare echilibrat (AVL).
-10.2 Verificarea și aplicarea rotațiilor pentru menținerea echilibrului.
-10.3 Funcție de căutare a unui nod în arbore pe baza unui ID.
-10.4 Funcție pentru salvarea nodurilor într-un vector folosind preordine, inordine, postordine.
-10.5 Funcție pentru salvarea nodurilor într-o listă simplu înlănțuită (preordine, inordine, postordine).
-10.6 Funcție pentru salvarea nodurilor într-o listă dublu înlănțuită (preordine, inordine, postordine).
 
-12. Stive și cozi
+	10.1 Implementarea unui arbore binar de căutare echilibrat (AVL).
+	10.2 Verificarea și aplicarea rotațiilor pentru menținerea echilibrului.
+	10.3 Funcție de căutare a unui nod în arbore pe baza unui ID.
+	10.4 Funcție pentru salvarea nodurilor într-un vector folosind preordine, inordine, postordine.
+	10.5 Funcție pentru salvarea nodurilor într-o listă simplu înlănțuită (preordine, inordine, postordine).
+	10.6 Funcție pentru salvarea nodurilor într-o listă dublu înlănțuită (preordine, inordine, postordine).
+
+14. Stive și cozi
 ===================
-Stivă (LIFO):
 
-Pe un vector.
-Pe o listă simplu înlănțuită.
-Pe o listă dublu înlănțuită.
-Coada (FIFO):
+	Stivă (LIFO):
 
-Pe un vector.
-Pe o listă simplu înlănțuită.
-Pe o listă dublu înlănțuită.
+	Pe un vector.
+	Pe o listă simplu înlănțuită.
+	Pe o listă dublu înlănțuită.
+	Coada (FIFO):
+
+	Pe un vector.
+	Pe o listă simplu înlănțuită.
+	Pe o listă dublu înlănțuită.
 
 
 	 
