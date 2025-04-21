@@ -96,6 +96,7 @@ Funcții necesare:
 	6.5 Funcție pentru interschimbarea a două elemente din listă pe baza pozițiilor.
 
  7. HashTable
+    	
  ==================
 	
 	7.1 Crearea unei tabele de dispersie pentru stocarea clădirilor din București (clustere pe baza anului construirii).
@@ -106,14 +107,16 @@ Funcții necesare:
 	7.5 Funcție pentru salvarea într-un vector a clădirilor dintr-un anumit an (deep copy).
 	7.6 Funcție pentru modificarea anului de construire a unei clădiri (cu actualizarea clusterizării).
 
-8. Heap
+9. Heap
+	    	
 ==========
 
 	8.1 Implementarea unui sistem pentru gestiunea pacienților la Unitatea de Primiri Urgențe (UPU).
 	8.2 Structura Pacient include un grad de urgență.
 	8.3 Utilizarea unui Max-Heap pentru gestionarea pacienților astfel încât cei mai urgenti să fie preluați cu prioritate.
    
-9. Arbori binari de căutare (BST)
+11. Arbori binari de căutare (BST)
+	    	
 =================================
 	
 	9.1 Funcție pentru ștergerea unui nod pe baza unui ID, menținând proprietățile arborelui BST.
@@ -121,7 +124,7 @@ Funcții necesare:
 	9.3 Funcție pentru numărarea nodurilor subordonate unui nod.
 	9.4 Funcție pentru returnarea subarborelui cu mai multe noduri în subordine.
 
-10. Arbori AVL
+13. Arbori AVL
 ================
 
 	10.1 Implementarea unui arbore binar de căutare echilibrat (AVL).
@@ -132,6 +135,7 @@ Funcții necesare:
 	10.6 Funcție pentru salvarea nodurilor într-o listă dublu înlănțuită (preordine, inordine, postordine).
 
 14. Stive și cozi
+	    
 ===================
 
 	Stivă (LIFO):
