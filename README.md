@@ -80,12 +80,12 @@ Funcții necesare:
     
  =========================
     
-5.1 Funcție pentru ștergerea unui nod de pe o poziție dată.
-5.2 Funcție pentru inserarea elementelor în ordine crescătoare după un atribut.
-5.3 Funcție pentru salvarea într-un vector a elementelor care îndeplinesc o condiție (deep copy).
-5.4 Funcție pentru interschimbarea a două elemente în listă pe baza pozițiilor.
+	5.1 Funcție pentru ștergerea unui nod de pe o poziție dată.
+	5.2 Funcție pentru inserarea elementelor în ordine crescătoare după un atribut.
+	5.3 Funcție pentru salvarea într-un vector a elementelor care îndeplinesc o condiție (deep copy).
+	5.4 Funcție pentru interschimbarea a două elemente în listă pe baza pozițiilor.
     
-7. Liste dublu înlănțuite
+6. Liste dublu înlănțuite
    
 ==========================
 
