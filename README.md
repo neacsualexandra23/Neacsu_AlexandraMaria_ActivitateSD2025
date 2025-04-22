@@ -46,7 +46,7 @@ Funcții necesare:
    
 =============
 
-	2.1. Crearea unui vector alocat dinamic cu cel puțin 5 obiecte de tipul structurii definite.👍
+	2.1. Crearea unui vectorin functia main, alocat dinamic cu cel puțin 5 obiecte de tipul structurii definite.👍
 	2.2. Funcție pentru copierea obiectelor care îndeplinesc o condiție într-un nou vector.👍
 	2.3. Funcție pentru mutarea obiectelor care îndeplinesc o altă condiție într-un nou vector.👍
 	2.4. Funcție pentru concatenarea a doi vectori.👍
