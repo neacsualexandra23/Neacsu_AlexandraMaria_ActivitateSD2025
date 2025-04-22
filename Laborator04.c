@@ -1,7 +1,9 @@
 //liste simplu inlantuite 
+#define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
 #include<string.h>
 #include<malloc.h>
+
 
 struct Ferma {
 	char* nume;
@@ -13,7 +15,7 @@ struct nod {
 	struct nod* next;
 };
 
-struct Ferma createFerma(const char* nume, int nrAnimale) {
+ struct Ferma createFerma(const char* nume, int nrAnimale) {
 	struct Ferma f;
 	f.nume = (char*)malloc(sizeof(char) * (strlen(nume) + 1));
 	strcpy(f.nume, nume);
@@ -151,7 +153,7 @@ void main() {
 	cap = inserareSfarsit(cap, createFerma("Crevedia", 1200));
 
 	afisareListaFerme(cap);
-
+	/*
 	cap = inserareInceput(cap, createFerma("Avicola", 1200));
 
 	afisareListaFerme(cap);
@@ -167,4 +169,5 @@ void main() {
 	cap = inserareInainteDeUnNodCuValoareaData(cap, "Avicola", createFerma("NOUA", 90));
 
 	afisareListaFerme(cap);
+	*/
 }

@@ -39,6 +39,9 @@
     <ClCompile Include="Laborator04.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Laborator05.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="masini.txt" />
