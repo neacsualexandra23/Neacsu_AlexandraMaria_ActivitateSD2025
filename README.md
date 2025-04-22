@@ -31,7 +31,7 @@ struct Cinema {
 Funcții necesare:
 
 1.2. Funcție pentru citirea unui articol de la tastatură.  👍
-        struct Cinema initCinema(const char* denumire, int nrSali, int NrIncasari, const float* Incasari) 
+        struct Cinema citireCinema()  
 	
 1.3. Funcție care calculează o valoare (ex: medie, sumă, maxim, minim).  👍
         float calculareMedieIncasari(struct Cinema c) 
