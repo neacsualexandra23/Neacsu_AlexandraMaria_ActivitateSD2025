@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Exercitiu1.c" />
     <ClCompile Include="fisier.c" />
     <ClCompile Include="Laborator01.c" />
     <ClCompile Include="Laborator02.c" />
