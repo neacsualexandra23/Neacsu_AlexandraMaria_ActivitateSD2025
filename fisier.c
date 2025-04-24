@@ -93,7 +93,7 @@ void inserareCinemaInVector(struct Cinema c,struct Cinema** vector, int index) {
 	}
 	
 }
-struct Cinema citireCinemaDinFisier(FILE* file) {
+struct Cinema citireUnCinemaDinFisier(FILE* file) {
 	char buffer[256];
 	struct Cinema c1;
 	
@@ -134,7 +134,7 @@ void citesteCinemaDinFisier(struct Cinema** vector, const char* numeFisier, int 
 	FILE* fisier = fopen(numeFisier, "r");
 	int contor = 0;
 	while (contor < dimensiune && !feof(fisier)) {
-		struct Cinema p = citireCinemaDinFisier(fisier);
+		struct Cinema p = citireUnCinemaDinFisier(fisier);
 
 		inserareCinemaInVector(p, vector, contor);
 		contor++;
