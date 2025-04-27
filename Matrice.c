@@ -14,7 +14,7 @@ struct Cinema {
 	int NrIncasari;
 	float* Incasari;
 };
-
+/*
 struct Cinema initCinema(const char* denumire, int nrSali, int NrIncasari, const float* Incasari) {
 	struct Cinema c;
 	int i;
@@ -78,7 +78,7 @@ struct Cinema citireCinemaDinFisier(FILE* file) {
 	for (i = 0; i < c1.NrIncasari; i++) {
 		aux = strtok(NULL, ",\n");
 		c1.Incasari[i] = atof(aux);
-		//printf("Incasare %d: %.2f\n", i + 1, c1.Incasari[i]);
+		
 
 
 	}

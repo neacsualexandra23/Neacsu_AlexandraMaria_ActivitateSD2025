@@ -16,7 +16,7 @@ struct nod {
     struct nod* urmator;
     struct nod* precedent;
 };
-
+/*
 struct Tara initializareTara(const char* nume, int nrLocuitori, float suprafata) {
     struct Tara t;
     t.nume = (char*)malloc(sizeof(char) * (strlen(nume) + 1));
@@ -128,3 +128,4 @@ void main() {
     afisareLista(lista);
     lista = stergereListaDubla(lista);
 }
+*/

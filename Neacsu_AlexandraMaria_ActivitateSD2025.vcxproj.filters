@@ -45,11 +45,18 @@
     <ClCompile Include="Exercitiu1.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Exercitiu2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exercitiu3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="masini.txt" />
     <Text Include="data.txt" />
     <Text Include="Cinematografe.txt" />
     <Text Include="Cinematografe_salvate.txt" />
+    <Text Include="Ferme.txt" />
   </ItemGroup>
 </Project>

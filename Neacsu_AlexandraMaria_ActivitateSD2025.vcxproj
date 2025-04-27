@@ -128,6 +128,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Exercitiu1.c" />
+    <ClCompile Include="Exercitiu2.c" />
+    <ClCompile Include="Exercitiu3.c" />
     <ClCompile Include="fisier.c" />
     <ClCompile Include="Laborator01.c" />
     <ClCompile Include="Laborator02.c" />
@@ -142,6 +144,7 @@
     <Text Include="Cinematografe.txt" />
     <Text Include="Cinematografe_salvate.txt" />
     <Text Include="data.txt" />
+    <Text Include="Ferme.txt" />
     <Text Include="masini.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
