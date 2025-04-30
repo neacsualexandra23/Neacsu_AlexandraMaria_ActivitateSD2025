@@ -57,6 +57,9 @@
     <ClCompile Include="Exercitiu5.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ListeSimpluInlantuite.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="masini.txt" />

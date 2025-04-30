@@ -4,7 +4,7 @@
 #include<stdlib.h>
 #include<string.h>
 /* Citire structuri din fisier si incarcarea lor intr-o ista*/
-
+/*
 struct Ferma {
 	char* denumire;
 	int nrAnimale;
@@ -109,6 +109,15 @@ void afisareListaFerme(struct nod* cap) {
 	//	afisareFerma(cap->info);
 	//}
 }
+struct nod* stergereLista(struct nod* cap) {
+	while (cap) {
+		struct nod* aux = cap;
+		cap = cap->next;
+		free(aux->info.denumire);
+		free(aux);
+	}
+	return cap;
+}
 
 int main()
 {
@@ -120,5 +129,7 @@ int main()
 	
 	afisareListaFerme(cap);
 
-
+	stergereLista(cap);
 }
+
+*/

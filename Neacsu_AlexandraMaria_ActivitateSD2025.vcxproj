@@ -138,6 +138,7 @@
     <ClCompile Include="Laborator03.c" />
     <ClCompile Include="Laborator04.c" />
     <ClCompile Include="Laborator05.c" />
+    <ClCompile Include="ListeSimpluInlantuite.c" />
     <ClCompile Include="Matrice.c" />
     <ClCompile Include="Neacsu_AlexandraMaria_ActivitateSD2025.c" />
     <ClCompile Include="Seminar04.c" />
