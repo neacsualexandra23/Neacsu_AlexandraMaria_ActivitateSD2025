@@ -3,13 +3,13 @@
 #include<malloc.h>
 #include<stdlib.h>
 #include<string.h>
-
+/* Citire structuri din fisier si incarcarea lor intr-un vector*/
 struct Ferma {
 	char* denumire;
 	int nrAnimale;
 
 };
-
+/*
 void afisareFerma(struct Ferma f)
 {
 	printf("Denumirea animal: %s \n", f.denumire);
@@ -48,7 +48,7 @@ struct Ferma citireOFermaDinFisier(FILE* fisier)
 
 	return f;
 }
-inserareOFermaInVector(struct Ferma f, struct Ferma** vector, int index) {
+void inserareOFermaInVector(struct Ferma f, struct Ferma** vector, int index) {
 	(*vector)[index] = f;
 }
 
@@ -65,21 +65,26 @@ void citireFermeDinFisierSiInserareInVector(char* numeFisier, struct Ferma** vec
 	fclose(fisier);
 }
 
+void AfisareElementeVector(struct Ferma* vector, int dimensiune) {
+	for (int i = 0; i < dimensiune; i++)
+	{
+		afisareFerma(vector[i]);
+	}
+}
 
 
 int main()
-{  /*
-	struct Ferma f1;
-	f1 = initFerma("Ferma1", 10);
-	afisareFerma(f1);
-	EliberareMemorie(f1);
-	*/
+{  
+	//struct Ferma f1;
+	//f1 = initFerma("Ferma1", 10);
+	//afisareFerma(f1);
+	//EliberareMemorie(f1);
+	
 	struct Ferma* vectorFerme;
 	//vectorFerme = malloc(sizeof(struct Ferma) * 5);
 	citireFermeDinFisierSiInserareInVector("ferme.txt", &vectorFerme, 5);
-	for (int i = 0; i < 5; i++)
-	{
-		afisareFerma(vectorFerme[i]);
-	}
+	AfisareElementeVector(vectorFerme, 5);
+
 
 }
+*/

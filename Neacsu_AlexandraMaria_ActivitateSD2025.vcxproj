@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -130,6 +130,8 @@
     <ClCompile Include="Exercitiu1.c" />
     <ClCompile Include="Exercitiu2.c" />
     <ClCompile Include="Exercitiu3.c" />
+    <ClCompile Include="Exercitiu4.c" />
+    <ClCompile Include="Exercitiu5.c" />
     <ClCompile Include="fisier.c" />
     <ClCompile Include="Laborator01.c" />
     <ClCompile Include="Laborator02.c" />

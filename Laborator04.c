@@ -4,7 +4,7 @@
 #include<string.h>
 #include<malloc.h>
 
-
+/*
 struct Ferma {
 	char* nume;
 	int nrAnimale;
@@ -14,7 +14,7 @@ struct nod {
 	struct Ferma info;
 	struct nod* next;
 };
-/*
+
  struct Ferma createFerma(const char* nume, int nrAnimale) {
 	struct Ferma f;
 	f.nume = (char*)malloc(sizeof(char) * (strlen(nume) + 1));
