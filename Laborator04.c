@@ -147,7 +147,8 @@ void main() {
 	struct Ferma f = createFerma("faraAnimale", 1);
 	struct nod* node = createNod(f, NULL);
 	struct nod* cap = NULL;
-	cap = inserareSfarsit(cap, createFerma("Cocosul vesel", 200));
+	f1= createFerma("Cocosul vesel", 200);
+	cap = inserareSfarsit(cap,f1 );
 	cap = inserareSfarsit(cap, createFerma("Ferma", 100));
 	cap = inserareSfarsit(cap, createFerma("Avicola", 400));
 	cap = inserareSfarsit(cap, createFerma("Crevedia", 1200));

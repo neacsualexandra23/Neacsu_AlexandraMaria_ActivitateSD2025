@@ -10,20 +10,24 @@ struct Cinema {
 	int NrIncasari;
 	float* Incasari;
 };
-
-struct nod {
+/*
+/struct nod {
 	struct Cinema info;
 	struct nod* next;
 };
 
-/*
+struct ListaDubluInlantuita {
+	struct nod* primNod;
+	struct nod* ultimNod;
+};
+
 
 struct Cinema initCinema(const char* denumire, int nrSali, int NrIncasari, const float* Incasari) {
 	struct Cinema c;
 	int i;
 
 	c.denumire = (char*)malloc(sizeof(char) * (strlen(denumire) + 1));
-	strcpy(c.denumire,  denumire);
+	strcpy(c.denumire, denumire);
 
 
 	c.nrSali = nrSali;
@@ -51,12 +55,15 @@ void afisareCinema(struct Cinema c) {
 	}
 }
 
-struct nod* initNod(struct Cinema info, struct nod* next) {
-	struct nod* nou = (struct nod*)malloc(sizeof(struct nod));
-	nou->info = info;
-	nou->next = next;
-	return nou;
+struct nod* initNod(struct Tara info, struct nod* next, struct nod* prev) {
+	struct nod* nodNou = (struct nod*)malloc(sizeof(struct nod));
+	nodNou->informatie = info;
+	nodNou->urmator = next;
+	nodNou->precedent = prev;
+
+	return nodNou;
 }
+
 void afisareListaCinematografe(struct nod* cap) {
 	while (cap) {
 		afisareCinema(cap->info);
@@ -64,7 +71,7 @@ void afisareListaCinematografe(struct nod* cap) {
 	}
 
 }
-//5.1 Functie pentru ștergerea unui nod de pe o poziție dată.
+//6.1 Functie pentru ștergerea unui nod de pe o poziție dată.
 struct nod* stergereNod(struct nod* cap, int poz) {
 	struct nod* temp = cap;
 	struct nod* aux = NULL;
@@ -127,8 +134,8 @@ struct Cinema* salvareInVector(struct nod* cap, int* dimensiune) {
 	struct Cinema* vector = (struct Cinema*)malloc(sizeof(struct Cinema) * (*dimensiune));
 	*dimensiune = 0;
 	while (cap) {
-		if (cap->info.nrSali > 5) { 
-			
+		if (cap->info.nrSali > 5) {
+
 			vector[*dimensiune] = cap->info;
 			(*dimensiune)++;
 		}
@@ -185,9 +192,9 @@ void dezalocareVector(struct Cinema* vector, int dimensiune) {
 int main()
 {
 
-	struct Cinema c1,c2,c3;
-	float vectorIncasari[] = {10.30f, 20.34f,30.00f};
-	c1 = initCinema("Cinema1", 10,3,vectorIncasari);
+	struct Cinema c1, c2, c3;
+	float vectorIncasari[] = { 10.30f, 20.34f,30.00f };
+	c1 = initCinema("Cinema1", 10, 3, vectorIncasari);
 	c2 = initCinema("Cinema2", 5, 3, vectorIncasari);
 	c3 = initCinema("Cinema3", 7, 3, vectorIncasari);
 	//afisareCinema(c1);
@@ -206,7 +213,7 @@ int main()
 	//5.2 Funcție pentru inserarea elementelor în ordine crescătoare după un atribut. nr sali
 	stergereLista(cap);
 	cap = NULL;
-	
+
 	struct Cinema c4 = initCinema("Cinema4", 11, 3, vectorIncasari);
 	struct Cinema c5 = initCinema("Cinema5", 8, 3, vectorIncasari);
 	cap = inserareNodNouInOrdine(cap, c1);
@@ -214,20 +221,20 @@ int main()
 	cap = inserareNodNouInOrdine(cap, c3);
 	cap = inserareNodNouInOrdine(cap, c4);
 	cap = inserareNodNouInOrdine(cap, c5);
-	
+
 	printf("\nAfisare Lista dupa inserare in lista in ordine dupa nr sali:\n");
 	afisareListaCinematografe(cap);
 
 
 	//5.3 Funcție pentru salvarea într - un vector a elementelor care îndeplinesc o condiție(deep copy). Nr sali > 5
-	
+
 	printf("\Afisae Vector  dupa inserare in  vector in ordine dupa nr sali:\n");
 	struct Cinema* vector = NULL;
 	int dimensiune = 0;
 	vector = salvareInVector(cap, &dimensiune);
 	//printf("\nDimensiune vector: %d\n", dimensiune);
 	AfisareElementeVector(vector, dimensiune);
-	
+
 	//5.4 Functie pentru interschimbarea a două elemente în listă pe baza pozițiilor
 	cap = interschimbareNoduri(cap, 0, 2);
 	printf("\nAfisare Lista dupa intersicimbare elementelor din lista de pe 2 pozitii:\n");

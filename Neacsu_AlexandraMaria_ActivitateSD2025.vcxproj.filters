@@ -60,6 +60,12 @@
     <ClCompile Include="ListeSimpluInlantuite.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="listeDubluInlantuite.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exercitiu6.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="masini.txt" />

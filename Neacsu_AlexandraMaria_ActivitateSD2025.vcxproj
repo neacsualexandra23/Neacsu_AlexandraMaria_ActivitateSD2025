@@ -132,12 +132,14 @@
     <ClCompile Include="Exercitiu3.c" />
     <ClCompile Include="Exercitiu4.c" />
     <ClCompile Include="Exercitiu5.c" />
+    <ClCompile Include="Exercitiu6.c" />
     <ClCompile Include="fisier.c" />
     <ClCompile Include="Laborator01.c" />
     <ClCompile Include="Laborator02.c" />
     <ClCompile Include="Laborator03.c" />
     <ClCompile Include="Laborator04.c" />
     <ClCompile Include="Laborator05.c" />
+    <ClCompile Include="listeDubluInlantuite.c" />
     <ClCompile Include="ListeSimpluInlantuite.c" />
     <ClCompile Include="Matrice.c" />
     <ClCompile Include="Neacsu_AlexandraMaria_ActivitateSD2025.c" />

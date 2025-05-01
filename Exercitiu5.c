@@ -3,7 +3,7 @@
 #include<malloc.h>
 #include<stdlib.h>
 #include<string.h>
-/* Citire structuri din fisier si incarcarea lor intr-o ista*/
+/* Citire structuri din fisier si incarcarea lor intr-o lista*/
 /*
 struct Ferma {
 	char* denumire;
