@@ -10,11 +10,7 @@ struct Cinema {
 	int nrIncasari;
 };
 
-struct nod {
-	struct Cinema info;
-	struct nod* next;
-};
-
+/*
 
 struct Cinema  initCinema(char* denumire, int nrSali, int nrIncasari) {
 	struct Cinema c;
@@ -29,13 +25,9 @@ struct Cinema  initCinema(char* denumire, int nrSali, int nrIncasari) {
 	return c;
 }
 
-struct nod* initNod(struct Cinema info, struct nod* next)
-{
-	struct nod* nodNou = malloc(sizeof(struct Cinema));
-	nodNou->info = info;
-	nodNou->next = next;
-	return nodNou;
-}
+
+
+
 
 void afisarecinema(struct Cinema c) {
 	printf("denumire cinema: %s \n", c.denumire);
@@ -64,10 +56,15 @@ int main() {
 	c3 = initCinema("City3", 10, 7);
 	struct Cinema* vector;
 	vector = (struct Cinema*)malloc(sizeof(struct Cinema)*3);
-	vector[0] = c2;
-	vector[1] = c1;
+	vector[0] = c1;
+	vector[1] = c2;
 	vector[2] = c3;
+	printf("Afisare vector\n");
 	afisareVector(vector, 3);
 
 	eliberareMemorieVector(vector, 3);
+
+
 }
+
+*/

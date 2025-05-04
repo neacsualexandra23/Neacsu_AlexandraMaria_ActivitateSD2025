@@ -72,28 +72,30 @@ void afisareListaCinematografe(struct nod* cap) {
 
 }
 //6.1 Functie pentru ștergerea unui nod de pe o poziție dată.
-struct nod* stergereNod(struct nod* cap, int poz) {
-	struct nod* temp = cap;
-	struct nod* aux = NULL;
-	if (poz == 0) {
-		cap = cap->next;
-		free(temp->info.denumire);
-		free(temp->info.Incasari);
+void stergePozitie(struct nod** cap, int pozitie) {
+	struct nod* temp = *cap;
+
+	// Dacă ștergem primul nod
+	if (pozitie == 0) {
+		*cap = temp->next;
+		freeCinema(temp->info);
 		free(temp);
+		return;
 	}
-	else {
-		for (int i = 0; i < poz - 1 && temp != NULL; i++) {
-			temp = temp->next;
-		}
-		if (temp != NULL && temp->next != NULL) {
-			aux = temp->next;
-			temp->next = aux->next;
-			free(aux->info.denumire);
-			free(aux->info.Incasari);
-			free(aux);
-		}
+
+	int index = 0;
+	struct nod* anterior = NULL;
+
+	while (temp != NULL && index < pozitie) {
+		anterior = temp;
+		temp = temp->next;
+		index++;
 	}
-	return cap;
+
+	// temp este nodul de șters
+	anterior->next = temp->next;
+	freeCinema(temp->info);
+	free(temp);
 }
 
 struct nod* inserareNodNouLaSfarsitulListei(struct nod* cap, struct Cinema c) {

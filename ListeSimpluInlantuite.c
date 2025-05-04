@@ -65,28 +65,41 @@ void afisareListaCinematografe(struct nod* cap) {
 
 }
 //5.1 Functie pentru ștergerea unui nod de pe o poziție dată.
-struct nod* stergereNod(struct nod* cap, int poz) {
-	struct nod* temp = cap;
-	struct nod* aux = NULL;
-	if (poz == 0) {
-		cap = cap->next;
-		free(temp->info.denumire);
-		free(temp->info.Incasari);
+// Funcția de ștergere a unui nod la o poziție dată
+
+void stergePozitie(struct nod** cap, int pozitie) {
+	if (*cap == NULL || pozitie < 0) {
+		printf("Lista este goală sau poziția este invalidă.\n");
+		return;
+	}
+
+	struct nod* temp = *cap;
+
+	// Ștergerea primului nod
+	if (pozitie == 0) {
+		*cap = temp->next;
+		freeCinema(temp->info);
 		free(temp);
+		return;
 	}
-	else {
-		for (int i = 0; i < poz - 1 && temp != NULL; i++) {
-			temp = temp->next;
-		}
-		if (temp != NULL && temp->next != NULL) {
-			aux = temp->next;
-			temp->next = aux->next;
-			free(aux->info.denumire);
-			free(aux->info.Incasari);
-			free(aux);
-		}
+
+	// Căutăm nodul anterior celui ce va fi șters
+	for (int i = 0; temp != NULL && i < pozitie - 1; i++) {
+		temp = temp->next;
 	}
-	return cap;
+
+	// Dacă poziția e invalidă (mai mare decât lungimea listei)
+	if (temp == NULL || temp->next == NULL) {
+		printf("Poziția este în afara listei.\n");
+		return;
+	}
+
+	// temp->next este nodul care trebuie șters
+	struct nod* nodDeSters = temp->next;
+	temp->next = nodDeSters->next;
+
+	freeCinema(nodDeSters->info);
+	free(nodDeSters);
 }
 
 struct nod* inserareNodNouLaSfarsitulListei(struct nod* cap, struct Cinema c) {

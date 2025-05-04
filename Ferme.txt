@@ -1,5 +1,5 @@
 ferma1,5
-ferma2,10
-ferma3,20
-ferma4,30
-ferma5,40
+ferma2,7
+ferma3,10
+ferma4,8
+ferma5,20
