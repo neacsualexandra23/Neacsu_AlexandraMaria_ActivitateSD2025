@@ -42,24 +42,21 @@ struct nod* inserareNodNouLaSfarsitulListei(struct nod* cap, struct Ferma f) {
     return cap;
 }
 
-struct Ferma citireOFermaDinFisier(FILE* fisier) {
+struct Ferma citireOFermaDinFisier(FILE* fisier)
+{
     struct Ferma f;
     char buffer[256];
-    f.denumire = NULL;
-    f.nrAnimale = 0;
 
-    if (fgets(buffer, sizeof(buffer), fisier)) {
-        char* aux = strtok(buffer, ",\n");
-        if (aux) {
-            f.denumire = (char*)malloc(strlen(aux) + 1);
-            strcpy(f.denumire, aux);
-        }
 
-        aux = strtok(NULL, ",\n");
-        if (aux) {
-            f.nrAnimale = atoi(aux);
-        }
-    }
+    fgets(buffer, 100, fisier);
+    char* aux;
+
+    aux = strtok(buffer, ",\n");
+    f.denumire = malloc(strlen(aux) + 1);
+    strcpy(f.denumire, aux);
+
+    aux = strtok(NULL, ",\n");
+    f.nrAnimale = atoi(aux);
 
     return f;
 }

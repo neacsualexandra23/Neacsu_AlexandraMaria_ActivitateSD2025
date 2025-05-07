@@ -75,6 +75,12 @@
     <ClCompile Include="Exercitiu9.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Exercitiu10.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Exercitiu11.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="masini.txt" />
