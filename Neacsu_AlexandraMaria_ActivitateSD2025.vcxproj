@@ -130,6 +130,8 @@
     <ClCompile Include="Exercitiu1.c" />
     <ClCompile Include="Exercitiu10.c" />
     <ClCompile Include="Exercitiu11.c" />
+    <ClCompile Include="Exercitiu12.c" />
+    <ClCompile Include="Exercitiu13.c.c" />
     <ClCompile Include="Exercitiu2.c" />
     <ClCompile Include="Exercitiu3.c" />
     <ClCompile Include="Exercitiu4.c" />

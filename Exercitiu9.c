@@ -3,16 +3,17 @@
 #include <stdlib.h>
 #include <string.h>
 
+
 //citire din fisier si incarcare in lista dubla inlantuita 
 
-// Structura de bază
+/*
 struct Ferma {
     char* denumire;
     int nrAnimale;
 };
 
-// Funcții de lucru cu o singură fermă
-/*
+
+
 void afisareFerma(struct Ferma f) {
     printf("Ferma: %s\n", f.denumire);
     printf("Numarul de animale este: %d\n", f.nrAnimale);
@@ -22,21 +23,20 @@ void eliberareFerma(struct Ferma f) {
     free(f.denumire);
 }
 
-// Nod pentru lista dublu înlănțuită
+
 struct nod {
     struct Ferma info;
     struct nod* next;
     struct nod* prev;
 };
 
-// Lista dublă
+
 struct listaDubla {
     struct nod* first;
     struct nod* last;
     int nrNoduri;
 };
 
-// Citirea unei ferme din fișier
 struct Ferma citireOFermaDinFisier(FILE* fisier)
 {
     struct Ferma f;
@@ -57,7 +57,7 @@ struct Ferma citireOFermaDinFisier(FILE* fisier)
 
 }
 
-// Inserare în lista dublă la final
+
 void inserareOFermaInListaDublaLaSfarsit(struct listaDubla* lista, struct Ferma f) {
     struct nod* nou = (struct nod*)malloc(sizeof(struct nod));
     nou->info = f;
@@ -75,7 +75,7 @@ void inserareOFermaInListaDublaLaSfarsit(struct listaDubla* lista, struct Ferma 
     lista->nrNoduri++;
 }
 
-// Afișare lista dubla de la început spre sfarsit
+
 void afisareListaFermeDeLaInceput(struct listaDubla lista) {
     struct nod* p = lista.first;
     while (p) {
@@ -84,7 +84,7 @@ void afisareListaFermeDeLaInceput(struct listaDubla lista) {
     }
 }
 
-// Afișare lista de la sfârșit
+
 void afisareListaFermeDeLaSfarsit(struct listaDubla lista) {
     struct nod* p = lista.last;
     while (p) {
@@ -93,7 +93,7 @@ void afisareListaFermeDeLaSfarsit(struct listaDubla lista) {
     }
 }
 
-// Citire ferme din fișier și construire listă
+
 struct listaDubla citireFermeDinFisierSiInserareInLista(char* numeFisier) {
     FILE* fisier = fopen(numeFisier, "r");
     struct listaDubla lista = { NULL, NULL, 0 };
@@ -108,7 +108,7 @@ struct listaDubla citireFermeDinFisierSiInserareInLista(char* numeFisier) {
     return lista;
 }
 
-// Eliberare memorie
+
 void eliberareLista(struct listaDubla* lista) {
     struct nod* p = lista->first;
     while (p) {
@@ -122,7 +122,7 @@ void eliberareLista(struct listaDubla* lista) {
     lista->nrNoduri = 0;
 }
 
-// Funcția principală
+
 int main() {
   
 
@@ -140,3 +140,103 @@ int main() {
     return 0;
 }
 */
+
+struct Ferma {
+    char* denumire;
+    int nrAnimale;
+};
+
+
+
+void afisareFerma(struct Ferma f) {
+    printf("Ferma: %s\n", f.denumire);
+    printf("Numarul de animale este: %d\n", f.nrAnimale);
+}
+
+void eliberareFerma(struct Ferma f) {
+    free(f.denumire);
+}
+
+
+struct nod {
+    struct Ferma info;
+    struct nod* next;
+    struct nod* prev;
+};
+
+
+struct listaDubla {
+    struct nod* first;
+    struct nod* last;
+    int nrNoduri;
+};
+struct Ferma initFerma(char* denumire, int nrAnimale) {
+    struct Ferma f;
+    f.denumire = (char*)malloc((strlen(denumire) + 1));
+    strcpy(f.denumire, denumire);
+    f.nrAnimale = nrAnimale;
+    return f;
+}
+
+void inserareOFermaInListaDublaLaSfarsit(struct listaDubla* lista, struct Ferma f) {
+    struct nod* nou = (struct nod*)malloc(sizeof(struct nod));
+    nou->info = f;
+    nou->next = NULL;
+    nou->prev = lista->last;
+
+    if (lista->last) {
+        lista->last->next = nou;
+    }
+    else {
+        lista->first = nou;
+    }
+
+    lista->last = nou;
+    lista->nrNoduri++;
+}
+
+
+void afisareListaFermeDeLaInceput(struct listaDubla lista) {
+    struct nod* p = lista.first;
+    while (p) {
+        afisareFerma(p->info);
+        p = p->next;
+    }
+}
+
+void eliberareLista(struct listaDubla* lista) {
+    struct nod* p = lista->first;
+    while (p) {
+        struct nod* temp = p;
+        p = p->next;
+        eliberareFerma(temp->info);
+        free(temp);
+    }
+    lista->first = NULL;
+    lista->last = NULL;
+    lista->nrNoduri = 0;
+}
+
+int main() {
+
+
+    printf("\nCreare in main de lista dubla din 3 ferme:\n");
+    struct listaDubla lista = { NULL, NULL, 0 };
+
+    struct Ferma f1, f2, f3;
+    f1 = initFerma("ferma1", 112);
+    f2 = initFerma("ferma2", 233);
+    f3 = initFerma("ferme3", 136);
+
+    inserareOFermaInListaDublaLaSfarsit(&lista, f1);
+    inserareOFermaInListaDublaLaSfarsit(&lista, f2);
+    inserareOFermaInListaDublaLaSfarsit(&lista, f3);
+
+    printf("\nAfisare lista de la inceput:\n");
+    afisareListaFermeDeLaInceput(lista);
+
+ 
+    eliberareLista(&lista);
+
+    return 0;
+}

@@ -3,12 +3,12 @@
 #include<string.h>
 #include<stdio.h>
 #include<stdlib.h>
-
+/*
 struct Ferma{
 	char* denumire;
 	int nrAnimale;
 };
-/*
+
 	struct nod {
 		struct Ferma info;
 		struct nod* next;

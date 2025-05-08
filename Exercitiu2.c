@@ -3,7 +3,7 @@
 #include<stdio.h>
 #include<string.h>
 #include<malloc.h>
-
+/*
 struct Cinema
 {
 	char* denumire;
@@ -12,7 +12,7 @@ struct Cinema
 };
 
 
-/*
+
 struct Cinema initCinema( char* denumire, int nrSali, int nrIncasari,  float* incasari) {
 	struct Cinema c;
 	int i;

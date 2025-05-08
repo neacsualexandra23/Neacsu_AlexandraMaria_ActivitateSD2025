@@ -8,7 +8,7 @@ struct Ferma  {
 	char* denumire;
 	int nrAnimale;
 };
-
+/*
 struct nod {
 	struct Ferma info ;
 	struct nod* next;
@@ -77,7 +77,7 @@ void afisareLista(struct nod* cap) {
 		cap = cap->next;
 	}
 }
-/* 
+
 struct nod* stergereLista(struct nod* cap) {
 	while (cap) {
 		struct nod* aux = cap;
@@ -98,9 +98,11 @@ void afisareFermeCuPutineAnimale(struct nod* cap, int prag) {
 		cap = cap->next;
 	}
 }
-*/
+
 int main() {
 	struct nod* cap = NULL;
 	CitireToateElementeleDinListasiInserareInFisier("Ferme.txt", &cap, 5);
 	afisareLista(cap);
 }
+
+*/
