@@ -87,6 +87,9 @@
     <ClCompile Include="Exercitiu13.c.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Exercitiu14.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="masini.txt" />
@@ -94,5 +97,6 @@
     <Text Include="Cinematografe.txt" />
     <Text Include="Cinematografe_salvate.txt" />
     <Text Include="Ferme.txt" />
+    <Text Include="Avioane.txt" />
   </ItemGroup>
 </Project>

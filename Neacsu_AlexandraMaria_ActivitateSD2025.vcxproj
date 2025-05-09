@@ -132,6 +132,7 @@
     <ClCompile Include="Exercitiu11.c" />
     <ClCompile Include="Exercitiu12.c" />
     <ClCompile Include="Exercitiu13.c.c" />
+    <ClCompile Include="Exercitiu14.c" />
     <ClCompile Include="Exercitiu2.c" />
     <ClCompile Include="Exercitiu3.c" />
     <ClCompile Include="Exercitiu4.c" />
@@ -153,6 +154,7 @@
     <ClCompile Include="Seminar04.c" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="Avioane.txt" />
     <Text Include="Cinematografe.txt" />
     <Text Include="Cinematografe_salvate.txt" />
     <Text Include="data.txt" />

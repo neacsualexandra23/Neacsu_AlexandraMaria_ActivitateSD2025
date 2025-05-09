@@ -3,8 +3,8 @@
 #include <malloc.h>
 #include <stdlib.h>
 #include <string.h>
-/*
 
+/*
 struct Ferma {
 	char* denumire;
 	int nrAnimale;

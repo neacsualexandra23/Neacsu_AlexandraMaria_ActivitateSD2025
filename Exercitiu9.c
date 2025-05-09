@@ -58,6 +58,7 @@ struct Ferma citireOFermaDinFisier(FILE* fisier)
 }
 
 
+
 void inserareOFermaInListaDublaLaSfarsit(struct listaDubla* lista, struct Ferma f) {
     struct nod* nou = (struct nod*)malloc(sizeof(struct nod));
     nou->info = f;
@@ -139,7 +140,7 @@ int main() {
 
     return 0;
 }
-*/
+
 
 struct Ferma {
     char* denumire;
@@ -240,3 +241,4 @@ int main() {
 
     return 0;
 }
+*/
