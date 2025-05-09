@@ -89,11 +89,11 @@ Funcții necesare:
    
 ==========================
 
-	6.1 Funcție pentru ștergerea unui nod de pe o poziție dată.
-	6.2 Funcție pentru inserarea elementelor în ordine crescătoare după un atribut.
-	6.3 Funcții pentru parcurgerea listei în ordine crescătoare și descrescătoare.
-	6.4 Funcție pentru salvarea elementelor într-o listă simplu înlănțuită (deep copy).
-	6.5 Funcție pentru interschimbarea a două elemente din listă pe baza pozițiilor.
+	6.1 Funcție pentru ștergerea unui nod de pe o poziție dată. 👍
+	6.2 Funcție pentru inserarea elementelor în ordine crescătoare după un atribut. 👍
+	6.3 Funcții pentru parcurgerea listei în ordine crescătoare și descrescătoare. 👍
+	6.4 Funcție pentru salvarea elementelor într-o listă simplu înlănțuită (deep copy). 👍
+	6.5 Funcție pentru interschimbarea a două elemente din listă pe baza pozițiilor. 👍
 
  7. HashTable
     	
