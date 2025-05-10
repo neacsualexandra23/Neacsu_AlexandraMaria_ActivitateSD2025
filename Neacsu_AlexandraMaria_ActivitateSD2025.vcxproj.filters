@@ -90,6 +90,9 @@
     <ClCompile Include="Exercitiu14.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Laborator 6 - Hash Table.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="masini.txt" />

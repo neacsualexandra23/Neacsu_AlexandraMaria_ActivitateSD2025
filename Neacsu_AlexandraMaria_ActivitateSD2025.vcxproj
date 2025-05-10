@@ -142,6 +142,7 @@
     <ClCompile Include="Exercitiu8.c" />
     <ClCompile Include="Exercitiu9.c" />
     <ClCompile Include="fisier.c" />
+    <ClCompile Include="Laborator 6 - Hash Table.c" />
     <ClCompile Include="Laborator01.c" />
     <ClCompile Include="Laborator02.c" />
     <ClCompile Include="Laborator03.c" />
