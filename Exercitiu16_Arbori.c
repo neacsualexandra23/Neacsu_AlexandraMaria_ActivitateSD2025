@@ -4,7 +4,7 @@
 #include<string.h>
 #include<malloc.h>
 #include<stdlib.h>
-
+/*
 struct Vacanta {
 	char* destinatie;
 	float pret;
@@ -142,3 +142,4 @@ void main() {
 	afisareNivelDinArbore(root, 2, &nivel);
 	stergereArbore(&root);
 }
+*/

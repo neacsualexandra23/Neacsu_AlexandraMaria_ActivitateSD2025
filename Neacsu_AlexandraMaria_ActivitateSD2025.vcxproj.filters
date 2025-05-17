@@ -93,13 +93,7 @@
     <ClCompile Include="Laborator 6 - Hash Table.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Exercitiu15.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Laborator_10mai.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Exercitiu16_Arbori.c">
+    <ClCompile Include="Arbori.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
