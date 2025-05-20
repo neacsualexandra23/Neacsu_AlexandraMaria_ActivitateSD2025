@@ -99,10 +99,10 @@ Funcții necesare:
     	
  ==================
 	
-	7.1 Crearea unei tabele de dispersie pentru stocarea clădirilor din București (clustere pe baza anului construirii).
-	7.2 Funcție pentru afișarea clădirilor dintr-un anumit an.
-	7.3 Funcție pentru ștergerea unei clădiri pe baza ID-ului și anului construirii.
-	7.4 Funcție pentru ștergerea unei clădiri doar pe baza ID-ului.
+	7.1 Crearea unei tabele de dispersie pentru stocarea clădirilor din București (clustere pe baza anului construirii)..👍
+	7.2 Funcție pentru afișarea clădirilor dintr-un anumit an..👍
+	7.3 Funcție pentru ștergerea unei clădiri pe baza ID-ului și anului construirii..👍
+	7.4 Funcție pentru ștergerea unei clădiri doar pe baza ID-ului..👍
 	Observarea diferenței dintre cele două funcții de ștergere.
 	7.5 Funcție pentru salvarea într-un vector a clădirilor dintr-un anumit an (deep copy).
 	7.6 Funcție pentru modificarea anului de construire a unei clădiri (cu actualizarea clusterizării).
@@ -111,9 +111,9 @@ Funcții necesare:
 	    	
 	==========
 
-	8.1 Implementarea unui sistem pentru gestiunea pacienților la Unitatea de Primiri Urgențe (UPU).
-	8.2 Structura Pacient include un grad de urgență.
-	8.3 Utilizarea unui Max-Heap pentru gestionarea pacienților astfel încât cei mai urgenti să fie preluați cu prioritate.
+	8.1 Implementarea unui sistem pentru gestiunea pacienților la Unitatea de Primiri Urgențe (UPU)..👍
+	8.2 Structura Pacient include un grad de urgență..👍
+	8.3 Utilizarea unui Max-Heap pentru gestionarea pacienților astfel încât cei mai urgenti să fie preluați cu prioritate..👍
    
 	9. Arbori binari de căutare (BST)
 	    	
