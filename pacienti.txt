@@ -1,0 +1,5 @@
+101,Neacsu Ion,45,90,Durere abdominala
+102,Ionescu Maria,30,50,Tuse productiva
+103,Paun Ionel,70,95,Infarct
+104,Doru Ioana,22,40,Durere in gat
+105,Marinescu Mihai,60,85,Durere in piept, tensiune

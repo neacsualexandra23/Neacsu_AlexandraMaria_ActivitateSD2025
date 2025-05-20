@@ -1,9 +1,11 @@
-﻿#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+﻿#define _CRT_SECURE_NO_WARNINGS
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<malloc.h>
 
 #define HASH_SIZE 100
-
+/*
 typedef struct Cladire {
 	int id;
 	char adresa[100];
@@ -171,3 +173,5 @@ void main() {
 	printf("\nCladiri din 1985 dupa modificare:\n");
 	afiseazaCladiriDinAn(1985);
 }
+
+*/

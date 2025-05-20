@@ -144,6 +144,7 @@
     <ClCompile Include="Exercitiu9.c" />
     <ClCompile Include="fisier.c" />
     <ClCompile Include="HashTable.c" />
+    <ClCompile Include="Heap.c" />
     <ClCompile Include="Laborator 6 - Hash Table.c" />
     <ClCompile Include="Laborator01.c" />
     <ClCompile Include="Laborator02.c" />
@@ -163,6 +164,7 @@
     <Text Include="data.txt" />
     <Text Include="Ferme.txt" />
     <Text Include="masini.txt" />
+    <Text Include="pacienti.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

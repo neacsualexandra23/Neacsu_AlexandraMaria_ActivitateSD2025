@@ -99,6 +99,9 @@
     <ClCompile Include="HashTable.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Heap.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="masini.txt" />
@@ -107,5 +110,6 @@
     <Text Include="Cinematografe_salvate.txt" />
     <Text Include="Ferme.txt" />
     <Text Include="Avioane.txt" />
+    <Text Include="pacienti.txt" />
   </ItemGroup>
 </Project>
