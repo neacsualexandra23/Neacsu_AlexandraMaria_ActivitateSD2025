@@ -96,6 +96,9 @@
     <ClCompile Include="Arbori.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="HashTable.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="masini.txt" />

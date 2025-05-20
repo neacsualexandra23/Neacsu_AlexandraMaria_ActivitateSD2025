@@ -14,7 +14,7 @@ struct nod {
     struct nod* st;
     struct nod* dr;
 };
-
+/*
 struct Ferma initFerma(const char* denumire, const float nrAnimale) {
     struct Ferma f;
     f.denumire = (char*)malloc(sizeof(char) * (strlen(denumire) + 1));
@@ -126,12 +126,12 @@ int inaltimeArbore(struct nod* root) {
 
 int main() {
     struct nod* root = NULL;
-   /* root = inserareInArbore(root, initFerma("Avatar", 35));
-    root = inserareInArbore(root, initFerma("Titanic", 30));
-    root = inserareInArbore(root, initFerma("Inception", 40));
-    root = inserareInArbore(root, initFerma("Interstellar", 45));
-    root = inserareInArbore(root, initFerma("Joker", 25));
-    */
+   // root = inserareInArbore(root, initFerma("Avatar", 35));
+  //  root = inserareInArbore(root, initFerma("Titanic", 30));
+   // root = inserareInArbore(root, initFerma("Inception", 40));
+  //  root = inserareInArbore(root, initFerma("Interstellar", 45));
+   // root = inserareInArbore(root, initFerma("Joker", 25));
+    
     citireFermeDinFisierSiInserareInArbore("Ferme.txt", &root);
 
     printf("Arborele de Fermae in ordine SRD:\n");
@@ -147,3 +147,5 @@ int main() {
     stergereArbore(&root);
     return 0;
 }
+
+*/
