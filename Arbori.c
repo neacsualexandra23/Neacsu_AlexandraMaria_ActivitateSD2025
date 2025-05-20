@@ -2,52 +2,81 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
-struct Cinema {
-    char* titlu;
-    float pretBilet;
+//  Arbore Binare de Căutare (BST),  
+// acest arbore oferă o ordonare crescătoare la parcurgerea SRD.( stanga radacina dreapta ) 
+struct Ferma {
+    char* denumire;
+    int nrAnimale;
 };
 
 struct nod {
-    struct Cinema info;
+    struct Ferma info;
     struct nod* st;
     struct nod* dr;
 };
 
-struct Cinema creareCinema(const char* titlu, const float pretBilet) {
-    struct Cinema f;
-    f.titlu = (char*)malloc(sizeof(char) * (strlen(titlu) + 1));
-    if (f.titlu == NULL) {
-        printf("Eroare la alocarea memoriei pentru titlu!\n");
-        exit(1);
-    }
-    strcpy(f.titlu, titlu);
-    f.pretBilet = pretBilet;
+struct Ferma initFerma(const char* denumire, const float nrAnimale) {
+    struct Ferma f;
+    f.denumire = (char*)malloc(sizeof(char) * (strlen(denumire) + 1));
+    strcpy(f.denumire, denumire);
+    f.nrAnimale = nrAnimale;
     return f;
 }
 
-void afisareCinema(struct Cinema f) {
-    printf("Cinemaul '%s' are pretul biletului %5.2f lei\n", f.titlu, f.pretBilet);
+
+void afisareFerma(struct Ferma f) {
+    printf("Fermaul '%s' are nrAnimale %d \n", f.denumire, f.nrAnimale);
 }
 
-struct nod* inserareInArbore(struct nod* root, struct Cinema f) {
+
+struct Ferma citireOFermaDinFisier(FILE* fisier)
+{
+    struct Ferma f;
+    char buffer[256];
+
+
+    fgets(buffer, 100, fisier);
+    char* aux;
+
+    aux = strtok(buffer, ",\n");
+    f.denumire = malloc(strlen(aux) + 1);
+    strcpy(f.denumire, aux);
+
+    aux = strtok(NULL, ",\n");
+    f.nrAnimale = atoi(aux);
+
+    return f;
+}
+
+void citireFermeDinFisierSiInserareInArbore(const char* numeFisier, struct nod** root) {
+    FILE* fisier = fopen(numeFisier, "r");
+
+    while (!feof(fisier)) {
+        struct Ferma f = citireOFermaDinFisier(fisier);
+
+        *root = inserareInArbore(*root, f);
+
+
+    }
+
+    fclose(fisier);
+}
+struct nod* inserareInArbore(struct nod* root, struct Ferma f) {
     if (root) {
-        if (f.pretBilet < root->info.pretBilet) {
+        if (f.nrAnimale < root->info.nrAnimale) {
             root->st = inserareInArbore(root->st, f);
         }
-        else if (f.pretBilet > root->info.pretBilet) {
+        else if (f.nrAnimale > root->info.nrAnimale) {
             root->dr = inserareInArbore(root->dr, f);
         }
         return root;
     }
     else {
         struct nod* nou = (struct nod*)malloc(sizeof(struct nod));
-        if (nou == NULL) {
-            printf("Eroare la alocarea nodului!\n");
-            exit(1);
-        }
+
         nou->info = f;
-        nou->st = nou->dr = NULL;
+        nou->st = NULL;
+        nou->dr = NULL;
         return nou;
     }
 }
@@ -55,31 +84,31 @@ struct nod* inserareInArbore(struct nod* root, struct Cinema f) {
 void afisareSRD(struct nod* root) {
     if (root) {
         afisareSRD(root->st);
-        afisareCinema(root->info);
+        afisareFerma(root->info);
         afisareSRD(root->dr);
     }
 }
 
-struct Cinema cautareCinemaDupaPret(struct nod* root, float pretBilet) {
+struct Ferma cautareFermaDupaPret(struct nod* root, float nrAnimale) {
     if (root) {
-        if (root->info.pretBilet > pretBilet) {
-            return cautareCinemaDupaPret(root->st, pretBilet);
+        if (root->info.nrAnimale > nrAnimale) {
+            return cautareFermaDupaPret(root->st, nrAnimale);
         }
-        else if (root->info.pretBilet < pretBilet) {
-            return cautareCinemaDupaPret(root->dr, pretBilet);
+        else if (root->info.nrAnimale < nrAnimale) {
+            return cautareFermaDupaPret(root->dr, nrAnimale);
         }
         else {
-            return creareCinema(root->info.titlu, root->info.pretBilet);
+            return initFerma(root->info.denumire, root->info.nrAnimale);
         }
     }
-    return creareCinema("", -1);
+    return initFerma("", -1);
 }
 
 void stergereArbore(struct nod** root) {
     if (*root) {
         stergereArbore(&(*root)->st);
         stergereArbore(&(*root)->dr);
-        free((*root)->info.titlu);
+        free((*root)->info.denumire);
         free(*root);
         *root = NULL;
     }
@@ -92,21 +121,28 @@ int inaltimeArbore(struct nod* root) {
     return 0;
 }
 
+
+
+
 int main() {
     struct nod* root = NULL;
-    root = inserareInArbore(root, creareCinema("Avatar", 35));
-    root = inserareInArbore(root, creareCinema("Titanic", 30));
-    root = inserareInArbore(root, creareCinema("Inception", 40));
-    root = inserareInArbore(root, creareCinema("Interstellar", 45));
-    root = inserareInArbore(root, creareCinema("Joker", 25));
+   /* root = inserareInArbore(root, initFerma("Avatar", 35));
+    root = inserareInArbore(root, initFerma("Titanic", 30));
+    root = inserareInArbore(root, initFerma("Inception", 40));
+    root = inserareInArbore(root, initFerma("Interstellar", 45));
+    root = inserareInArbore(root, initFerma("Joker", 25));
+    */
+    citireFermeDinFisierSiInserareInArbore("Ferme.txt", &root);
 
-    printf("Arborele de cinemae in ordine SRD:\n");
+    printf("Arborele de Fermae in ordine SRD:\n");
     afisareSRD(root);
-    printf("Inaltimea arborelui: %d\n", inaltimeArbore(root));
 
-    struct Cinema f = cautareCinemaDupaPret(root, 40);
-    printf("\nCinemaul cautat:\n");
-    afisareCinema(f);
+
+    printf("Inaltimea arborelui: %d\n", inaltimeArbore(root));
+    struct Ferma f = cautareFermaDupaPret(root, 40);
+
+    printf("\nFerma cautata:\n");
+    afisareFerma(f);
 
     stergereArbore(&root);
     return 0;
