@@ -105,6 +105,9 @@
     <ClCompile Include="Exercitiu_Arbori.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ArboriAVL.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="masini.txt" />
@@ -114,5 +117,6 @@
     <Text Include="Ferme.txt" />
     <Text Include="Avioane.txt" />
     <Text Include="pacienti.txt" />
+    <Text Include="Cinemai.txt" />
   </ItemGroup>
 </Project>

@@ -3,7 +3,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<malloc.h>
-
+/*
 struct Ferma {
 	char* denumire;
 	int nrAnimale;
@@ -83,3 +83,5 @@ int main() {
 	citireToateFermeleDinFisierSiInserareInArbore("Ferme.txt", &root);
 	afisareSRD(root);
 }
+
+*/

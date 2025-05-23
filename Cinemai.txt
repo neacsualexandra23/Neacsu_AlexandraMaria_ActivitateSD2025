@@ -1,0 +1,10 @@
+1,City Mall,12
+2,CityPark,10
+3,CityPlaza,11
+4,CityAfi,5
+5,CityBaneasa,8
+6,CitySun,3
+7,CityLake,4
+8,CityPalace,6
+9,CityColloseum,9
+10,CityMega,13
