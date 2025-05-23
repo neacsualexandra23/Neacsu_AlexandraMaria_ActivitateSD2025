@@ -102,6 +102,9 @@
     <ClCompile Include="Heap.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Exercitiu_Arbori.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="masini.txt" />

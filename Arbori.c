@@ -1,9 +1,11 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include <string.h>   
 //  Arbore Binare de Căutare (BST),  
 // acest arbore oferă o ordonare crescătoare la parcurgerea SRD.( stanga radacina dreapta ) 
+
+/*
 struct Ferma {
     char* denumire;
     int nrAnimale;
@@ -14,7 +16,7 @@ struct nod {
     struct nod* st;
     struct nod* dr;
 };
-/*
+
 struct Ferma initFerma(const char* denumire, const float nrAnimale) {
     struct Ferma f;
     f.denumire = (char*)malloc(sizeof(char) * (strlen(denumire) + 1));
@@ -48,19 +50,6 @@ struct Ferma citireOFermaDinFisier(FILE* fisier)
     return f;
 }
 
-void citireFermeDinFisierSiInserareInArbore(const char* numeFisier, struct nod** root) {
-    FILE* fisier = fopen(numeFisier, "r");
-
-    while (!feof(fisier)) {
-        struct Ferma f = citireOFermaDinFisier(fisier);
-
-        *root = inserareInArbore(*root, f);
-
-
-    }
-
-    fclose(fisier);
-}
 struct nod* inserareInArbore(struct nod* root, struct Ferma f) {
     if (root) {
         if (f.nrAnimale < root->info.nrAnimale) {
@@ -80,6 +69,21 @@ struct nod* inserareInArbore(struct nod* root, struct Ferma f) {
         return nou;
     }
 }
+
+void citireFermeDinFisierSiInserareInArbore(const char* numeFisier, struct nod** root) {
+    FILE* fisier = fopen(numeFisier, "r");
+
+    while (!feof(fisier)) {
+        struct Ferma f = citireOFermaDinFisier(fisier);
+
+        *root = inserareInArbore(*root, f);
+
+
+    }
+
+    fclose(fisier);
+}
+
 
 void afisareSRD(struct nod* root) {
     if (root) {
@@ -147,5 +151,7 @@ int main() {
     stergereArbore(&root);
     return 0;
 }
+
+
 
 */

@@ -142,6 +142,7 @@
     <ClCompile Include="Exercitiu7.c" />
     <ClCompile Include="Exercitiu8.c" />
     <ClCompile Include="Exercitiu9.c" />
+    <ClCompile Include="Exercitiu_Arbori.c" />
     <ClCompile Include="fisier.c" />
     <ClCompile Include="HashTable.c" />
     <ClCompile Include="Heap.c" />
