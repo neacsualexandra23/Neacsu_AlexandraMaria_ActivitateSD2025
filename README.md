@@ -128,12 +128,12 @@ Funcții necesare:
 	    
 ================
 
-	10.1 Implementarea unui arbore binar de căutare echilibrat (AVL).
-	10.2 Verificarea și aplicarea rotațiilor pentru menținerea echilibrului.
-	10.3 Funcție de căutare a unui nod în arbore pe baza unui ID.
-	10.4 Funcție pentru salvarea nodurilor într-un vector folosind preordine, inordine, postordine.
-	10.5 Funcție pentru salvarea nodurilor într-o listă simplu înlănțuită (preordine, inordine, postordine).
-	10.6 Funcție pentru salvarea nodurilor într-o listă dublu înlănțuită (preordine, inordine, postordine).
+	10.1 Implementarea unui arbore binar de căutare echilibrat (AVL).👍
+	10.2 Verificarea și aplicarea rotațiilor pentru menținerea echilibrului.👍
+	10.3 Funcție de căutare a unui nod în arbore pe baza unui ID.👍
+	10.4 Funcție pentru salvarea nodurilor într-un vector folosind preordine, inordine, postordine.👍
+	10.5 Funcție pentru salvarea nodurilor într-o listă simplu înlănțuită (preordine, inordine, postordine).👍
+	10.6 Funcție pentru salvarea nodurilor într-o listă dublu înlănțuită (preordine, inordine, postordine).👍
 
 11. Stive și cozi
 	    
