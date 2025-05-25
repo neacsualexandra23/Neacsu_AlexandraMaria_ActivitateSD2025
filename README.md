@@ -141,14 +141,14 @@ Funcții necesare:
 
 	Stivă (LIFO):
 
-	Pe un vector.
-	Pe o listă simplu înlănțuită.
-	Pe o listă dublu înlănțuită.
+	Pe un vector.👍
+	Pe o listă simplu înlănțuită.👍
+	Pe o listă dublu înlănțuită.👍
 	Coada (FIFO):
 
-	Pe un vector.
-	Pe o listă simplu înlănțuită.
-	Pe o listă dublu înlănțuită.
+	Pe un vector.👍
+	Pe o listă simplu înlănțuită.👍
+	Pe o listă dublu înlănțuită.👍
 
 
 	 
