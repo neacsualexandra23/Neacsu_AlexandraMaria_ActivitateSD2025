@@ -108,6 +108,9 @@
     <ClCompile Include="ArboriAVL.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Stive.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="masini.txt" />

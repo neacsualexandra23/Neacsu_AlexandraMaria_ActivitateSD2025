@@ -10,6 +10,7 @@ struct Cinema {
 
 };
 
+/*
 struct Nod {
 	struct Cinema info;
 	struct Nod* st;
@@ -310,3 +311,5 @@ void main()
 
 
 }
+
+*/

@@ -158,6 +158,7 @@
     <ClCompile Include="Matrice.c" />
     <ClCompile Include="Neacsu_AlexandraMaria_ActivitateSD2025.c" />
     <ClCompile Include="Seminar04.c" />
+    <ClCompile Include="Stive.c" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Avioane.txt" />
